@@ -10,6 +10,8 @@ import UIKit
 
 class MenuView: UIView {
     
+    // --MARK: initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -23,6 +25,38 @@ class MenuView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // --MARK: initializers
+    @objc func buttonAction(sender: UIButton!) {
+        if sender.titleLabel?.text == "Start" {
+            
+        }
+        else {
+
+        }
+    }
+    
+    
+    
+    // --MARK: setup functions
+    func setupViewHierarchy(){
+        self.addSubview(contentStack)
+    }
+    
+    func setupViewAttributes(){
+        
+    }
+    
+    func setupLayout(){
+        contentStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            contentStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            contentStack.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+    }
+    
+    
+    // --MARK: title
+
     lazy var title: UILabel = {
         var label = UILabel()
         label.text = "Yokai Run"
@@ -32,32 +66,44 @@ class MenuView: UIView {
         return label
     }()
     
+//    var test: UILabel = {
+//        var label = UILabel()
+//        label.text = "CLIQUEI ONDE"
+//        label.textColor = .red
+//        label.font = UIFont(name: "SF Pro", size: 100)
+//
+//        return label
+//    }()
+    
     // --MARK: buttons
     lazy var startButton: UIButton = {
         
-        var button = ButtonComponent(type: .primary, title: "Start", action: { print(0) })
+        var button = ButtonComponent(type: .primary, title: "Start").button
         
-        return button.loadButton()
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+        return button
 
     }()
     
     lazy var archiveButton: UIButton = {
         
-        var button = ButtonComponent(type: .primary, title: "Archive", action: {
-            print("arquivar")
-        })
+        var button = ButtonComponent(type: .primary, title: "Archive").button
         
-        return button.loadButton()
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+        return button
         
     }()
     
     lazy var creditsButton: UIButton = {
-        var button = ButtonComponent(type: .primary, title: "Credits", action: {
-            print("creditos")
-        })
         
-        return button.loadButton()
-
+        var button = ButtonComponent(type: .primary, title: "Credits").button
+        
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+        return button
+        
     }()
     
     // --MARK: main stacks and containers
@@ -81,22 +127,5 @@ class MenuView: UIView {
         
         return stack
     }()
-    
-    // --MARK: setup functions
-    func setupViewHierarchy(){
-        self.addSubview(contentStack)
-    }
-    
-    func setupViewAttributes(){
-        
-    }
-    
-    func setupLayout(){
-        contentStack.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            contentStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            contentStack.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-        ])
-    }
     
 }

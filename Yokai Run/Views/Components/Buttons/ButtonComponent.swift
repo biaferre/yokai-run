@@ -11,7 +11,7 @@ import UIKit
 class ButtonComponent: UIButton {
     var type: ButtonScale
     var title: String
-    var action: () -> ()
+    var button: UIButton
 
     override var intrinsicContentSize: CGSize {
            get {
@@ -21,31 +21,21 @@ class ButtonComponent: UIButton {
                }
         }
     
-    init(type: ButtonScale, title: String, action: @escaping ()->()) {
+    init(type: ButtonScale, title: String) {
         self.type = type
         self.title = title
-        self.action = action
+        self.button = UIButton(type: .roundedRect) // Inicialize 'self.button' aqui
         super.init(frame: .zero)
         
-        self.backgroundColor = .systemPink
+        self.button.setTitle(title, for: .normal)
+        self.button.tintColor = .black
+        self.button.backgroundColor = .systemRed
+
         }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadButton() -> UIButton {
-        var button = UIButton(type: .roundedRect)
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        button.setTitle(title, for: .normal)
-        button.tintColor = .black
-        button.backgroundColor = .systemRed
-        
-        return button
-    }
     
-    
-    @objc func buttonAction(sender: UIButton!) {
-        action()
-    }
 }

@@ -20,3 +20,30 @@ class MenuViewController: UIViewController {
     }
     
 }
+
+class CreditsViewController: UIViewController {
+    lazy var archiveView = ArchiveView()
+    
+    override func loadView() {
+        view = archiveView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+}
+
+class ArchiveViewController: UIViewController {
+    lazy var creditView = CreditView()
+    
+    override func loadView() {
+        view = creditView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+}
+
