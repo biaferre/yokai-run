@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D466F6DD2AF92C99004AC986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6DC2AF92C99004AC986 /* AppDelegate.swift */; };
+		D466F6DF2AF92C99004AC986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */; };
+		D466F6E12AF92C99004AC986 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6E02AF92C99004AC986 /* GameViewController.swift */; };
+		D466F6E92AF92C9A004AC986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D466F6E82AF92C9A004AC986 /* Assets.xcassets */; };
+		D466F6F72AF92C9A004AC986 /* Yokai_RunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6F62AF92C9A004AC986 /* Yokai_RunTests.swift */; };
+		D466F7012AF92C9A004AC986 /* Yokai_RunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F7002AF92C9A004AC986 /* Yokai_RunUITests.swift */; };
+		D466F7032AF92C9A004AC986 /* Yokai_RunUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F7022AF92C9A004AC986 /* Yokai_RunUITestsLaunchTests.swift */; };
+		D466F7122AFA9685004AC986 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F7112AFA9685004AC986 /* MenuView.swift */; };
+		D466F7152AFA9819004AC986 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F7142AFA9819004AC986 /* MenuViewController.swift */; };
+		D466F71B2AFAABC5004AC986 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F71A2AFAABC5004AC986 /* ButtonType.swift */; };
+		D466F71D2AFAAF61004AC986 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F71C2AFAAF61004AC986 /* ButtonComponent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D466F6F32AF92C9A004AC986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D466F6D12AF92C98004AC986 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D466F6D82AF92C98004AC986;
+			remoteInfo = "Yokai Run";
+		};
+		D466F6FD2AF92C9A004AC986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D466F6D12AF92C98004AC986 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D466F6D82AF92C98004AC986;
+			remoteInfo = "Yokai Run";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D466F6D92AF92C99004AC986 /* Yokai Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yokai Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D466F6DC2AF92C99004AC986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D466F6E02AF92C99004AC986 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D466F6E82AF92C9A004AC986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D466F6ED2AF92C9A004AC986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D466F6F22AF92C9A004AC986 /* Yokai RunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yokai RunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D466F6F62AF92C9A004AC986 /* Yokai_RunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yokai_RunTests.swift; sourceTree = "<group>"; };
+		D466F6FC2AF92C9A004AC986 /* Yokai RunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yokai RunUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D466F7002AF92C9A004AC986 /* Yokai_RunUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yokai_RunUITests.swift; sourceTree = "<group>"; };
+		D466F7022AF92C9A004AC986 /* Yokai_RunUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yokai_RunUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D466F7112AFA9685004AC986 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		D466F7142AFA9819004AC986 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D466F71A2AFAABC5004AC986 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
+		D466F71C2AFAAF61004AC986 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D466F6D62AF92C98004AC986 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D466F6EF2AF92C9A004AC986 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D466F6F92AF92C9A004AC986 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D466F6D02AF92C98004AC986 = {
+			isa = PBXGroup;
+			children = (
+				D466F6DB2AF92C99004AC986 /* Yokai Run */,
+				D466F6F52AF92C9A004AC986 /* Yokai RunTests */,
+				D466F6FF2AF92C9A004AC986 /* Yokai RunUITests */,
+				D466F6DA2AF92C99004AC986 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D466F6DA2AF92C99004AC986 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D466F6D92AF92C99004AC986 /* Yokai Run.app */,
+				D466F6F22AF92C9A004AC986 /* Yokai RunTests.xctest */,
+				D466F6FC2AF92C9A004AC986 /* Yokai RunUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D466F6DB2AF92C99004AC986 /* Yokai Run */ = {
+			isa = PBXGroup;
+			children = (
+				D466F7132AFA9689004AC986 /* Views */,
+				D466F7162AFA9827004AC986 /* ViewControllers */,
+				D466F6DC2AF92C99004AC986 /* AppDelegate.swift */,
+				D466F6E02AF92C99004AC986 /* GameViewController.swift */,
+				D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */,
+				D466F6E82AF92C9A004AC986 /* Assets.xcassets */,
+				D466F6ED2AF92C9A004AC986 /* Info.plist */,
+			);
+			path = "Yokai Run";
+			sourceTree = "<group>";
+		};
+		D466F6F52AF92C9A004AC986 /* Yokai RunTests */ = {
+			isa = PBXGroup;
+			children = (
+				D466F6F62AF92C9A004AC986 /* Yokai_RunTests.swift */,
+			);
+			path = "Yokai RunTests";
+			sourceTree = "<group>";
+		};
+		D466F6FF2AF92C9A004AC986 /* Yokai RunUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D466F7002AF92C9A004AC986 /* Yokai_RunUITests.swift */,
+				D466F7022AF92C9A004AC986 /* Yokai_RunUITestsLaunchTests.swift */,
+			);
+			path = "Yokai RunUITests";
+			sourceTree = "<group>";
+		};
+		D466F7132AFA9689004AC986 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D466F7182AFAABA2004AC986 /* Components */,
+				D466F7112AFA9685004AC986 /* MenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D466F7162AFA9827004AC986 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D466F7142AFA9819004AC986 /* MenuViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D466F7182AFAABA2004AC986 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D466F7192AFAABB7004AC986 /* Buttons */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D466F7192AFAABB7004AC986 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D466F71A2AFAABC5004AC986 /* ButtonType.swift */,
+				D466F71C2AFAAF61004AC986 /* ButtonComponent.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D466F6D82AF92C98004AC986 /* Yokai Run */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D466F7062AF92C9A004AC986 /* Build configuration list for PBXNativeTarget "Yokai Run" */;
+			buildPhases = (
+				D466F6D52AF92C98004AC986 /* Sources */,
+				D466F6D62AF92C98004AC986 /* Frameworks */,
+				D466F6D72AF92C98004AC986 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Yokai Run";
+			productName = "Yokai Run";
+			productReference = D466F6D92AF92C99004AC986 /* Yokai Run.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D466F6F12AF92C9A004AC986 /* Yokai RunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D466F7092AF92C9A004AC986 /* Build configuration list for PBXNativeTarget "Yokai RunTests" */;
+			buildPhases = (
+				D466F6EE2AF92C9A004AC986 /* Sources */,
+				D466F6EF2AF92C9A004AC986 /* Frameworks */,
+				D466F6F02AF92C9A004AC986 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D466F6F42AF92C9A004AC986 /* PBXTargetDependency */,
+			);
+			name = "Yokai RunTests";
+			productName = "Yokai RunTests";
+			productReference = D466F6F22AF92C9A004AC986 /* Yokai RunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D466F6FB2AF92C9A004AC986 /* Yokai RunUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D466F70C2AF92C9A004AC986 /* Build configuration list for PBXNativeTarget "Yokai RunUITests" */;
+			buildPhases = (
+				D466F6F82AF92C9A004AC986 /* Sources */,
+				D466F6F92AF92C9A004AC986 /* Frameworks */,
+				D466F6FA2AF92C9A004AC986 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D466F6FE2AF92C9A004AC986 /* PBXTargetDependency */,
+			);
+			name = "Yokai RunUITests";
+			productName = "Yokai RunUITests";
+			productReference = D466F6FC2AF92C9A004AC986 /* Yokai RunUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D466F6D12AF92C98004AC986 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D466F6D82AF92C98004AC986 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					D466F6F12AF92C9A004AC986 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = D466F6D82AF92C98004AC986;
+					};
+					D466F6FB2AF92C9A004AC986 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = D466F6D82AF92C98004AC986;
+					};
+				};
+			};
+			buildConfigurationList = D466F6D42AF92C98004AC986 /* Build configuration list for PBXProject "Yokai Run" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D466F6D02AF92C98004AC986;
+			productRefGroup = D466F6DA2AF92C99004AC986 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D466F6D82AF92C98004AC986 /* Yokai Run */,
+				D466F6F12AF92C9A004AC986 /* Yokai RunTests */,
+				D466F6FB2AF92C9A004AC986 /* Yokai RunUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D466F6D72AF92C98004AC986 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D466F6E92AF92C9A004AC986 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D466F6F02AF92C9A004AC986 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D466F6FA2AF92C9A004AC986 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D466F6D52AF92C98004AC986 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D466F7122AFA9685004AC986 /* MenuView.swift in Sources */,
+				D466F71B2AFAABC5004AC986 /* ButtonType.swift in Sources */,
+				D466F6E12AF92C99004AC986 /* GameViewController.swift in Sources */,
+				D466F7152AFA9819004AC986 /* MenuViewController.swift in Sources */,
+				D466F6DD2AF92C99004AC986 /* AppDelegate.swift in Sources */,
+				D466F6DF2AF92C99004AC986 /* SceneDelegate.swift in Sources */,
+				D466F71D2AFAAF61004AC986 /* ButtonComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D466F6EE2AF92C9A004AC986 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D466F6F72AF92C9A004AC986 /* Yokai_RunTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D466F6F82AF92C9A004AC986 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D466F7032AF92C9A004AC986 /* Yokai_RunUITestsLaunchTests.swift in Sources */,
+				D466F7012AF92C9A004AC986 /* Yokai_RunUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D466F6F42AF92C9A004AC986 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D466F6D82AF92C98004AC986 /* Yokai Run */;
+			targetProxy = D466F6F32AF92C9A004AC986 /* PBXContainerItemProxy */;
+		};
+		D466F6FE2AF92C9A004AC986 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D466F6D82AF92C98004AC986 /* Yokai Run */;
+			targetProxy = D466F6FD2AF92C9A004AC986 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D466F7042AF92C9A004AC986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D466F7052AF92C9A004AC986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D466F7072AF92C9A004AC986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Yokai Run/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "biAda.Yokai-Run";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D466F7082AF92C9A004AC986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Yokai Run/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "biAda.Yokai-Run";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D466F70A2AF92C9A004AC986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "biAda.Yokai-RunTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yokai Run.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Yokai Run";
+			};
+			name = Debug;
+		};
+		D466F70B2AF92C9A004AC986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "biAda.Yokai-RunTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yokai Run.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Yokai Run";
+			};
+			name = Release;
+		};
+		D466F70D2AF92C9A004AC986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "biAda.Yokai-RunUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Yokai Run";
+			};
+			name = Debug;
+		};
+		D466F70E2AF92C9A004AC986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y8H4LWMZZ8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "biAda.Yokai-RunUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Yokai Run";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D466F6D42AF92C98004AC986 /* Build configuration list for PBXProject "Yokai Run" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D466F7042AF92C9A004AC986 /* Debug */,
+				D466F7052AF92C9A004AC986 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D466F7062AF92C9A004AC986 /* Build configuration list for PBXNativeTarget "Yokai Run" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D466F7072AF92C9A004AC986 /* Debug */,
+				D466F7082AF92C9A004AC986 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D466F7092AF92C9A004AC986 /* Build configuration list for PBXNativeTarget "Yokai RunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D466F70A2AF92C9A004AC986 /* Debug */,
+				D466F70B2AF92C9A004AC986 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D466F70C2AF92C9A004AC986 /* Build configuration list for PBXNativeTarget "Yokai RunUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D466F70D2AF92C9A004AC986 /* Debug */,
+				D466F70E2AF92C9A004AC986 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D466F6D12AF92C98004AC986 /* Project object */;
+}
