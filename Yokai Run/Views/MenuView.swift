@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 class MenuView: UIView {
-    
+    weak var delegate: MenuViewDelegate?
+
     // --MARK: initializers
     
     override init(frame: CGRect) {
@@ -23,16 +24,6 @@ class MenuView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    // --MARK: initializers
-    @objc func buttonAction(sender: UIButton!) {
-        if sender.titleLabel?.text == "Start" {
-            
-        }
-        else {
-
-        }
     }
     
     
@@ -55,6 +46,7 @@ class MenuView: UIView {
     }
     
     
+    
     // --MARK: title
 
     lazy var title: UILabel = {
@@ -66,14 +58,7 @@ class MenuView: UIView {
         return label
     }()
     
-//    var test: UILabel = {
-//        var label = UILabel()
-//        label.text = "CLIQUEI ONDE"
-//        label.textColor = .red
-//        label.font = UIFont(name: "SF Pro", size: 100)
-//
-//        return label
-//    }()
+    
     
     // --MARK: buttons
     lazy var startButton: UIButton = {
@@ -105,6 +90,15 @@ class MenuView: UIView {
         return button
         
     }()
+    
+    
+    
+    // --MARK: button action
+    @objc func buttonAction(sender: UIButton!) {
+        delegate?.navigate(to: (sender.titleLabel?.text)!)
+    }
+    
+    
     
     // --MARK: main stacks and containers
     lazy var buttonStack: UIStackView = {
