@@ -11,17 +11,20 @@ class GameScene: SKScene {
     
     var groundNodes: [SKSpriteNode] = []
     
+    var heroNode = SKSpriteNode()
+    
     override func didMove(to: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         setupGrounds()
+        setupHero()
     }
     
     override func update(_ currentTime: TimeInterval) {
         moveGrounds()
         
     }
-    
+
     func setupGrounds() {
         for i in 0...3 {
             let ground = SKSpriteNode(imageNamed: "Grounds")
@@ -32,6 +35,7 @@ class GameScene: SKScene {
             
             self.addChild(ground)
             groundNodes.append(ground)
+            groundNodes.remove(at: 0)
         }
     }
     
@@ -45,6 +49,16 @@ class GameScene: SKScene {
                 node.position.x += (self.scene?.size.width)! * 3
             }
         }))
+    }
+    
+    func setupHero() {
+        let hero = SKSpriteNode(imageNamed: "Tengu")
+        hero.name = "Hero"
+        hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        hero.position = CGPoint(x: -((self.scene?.size.width)!)/3, y: -60)
+        
+        heroNode = hero
+        self.addChild(heroNode)
     }
     
 }

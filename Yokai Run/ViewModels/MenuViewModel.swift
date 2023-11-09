@@ -14,7 +14,7 @@ protocol MenuViewDelegate: AnyObject {
 
 class MenuViewModel {
     weak var delegate: MenuViewDelegate?
-    
+        
     func onNavigate() {
         delegate?.navigate(to: "")
     }
