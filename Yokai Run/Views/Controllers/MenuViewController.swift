@@ -33,7 +33,7 @@ class MenuViewController: UIViewController, MenuViewDelegate {
         }
         else if to == "Start" {
             print("start")
-//            navigationController?.pushViewController(GameViewController(), animated: true)
+            navigationController?.pushViewController(GameViewController(), animated: true)
         }
         else {
             navigationController?.pushViewController(ArchiveViewController(), animated: true)
