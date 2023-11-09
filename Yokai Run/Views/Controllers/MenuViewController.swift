@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MenuViewController: UIViewController, MenuViewDelegate {
+class MenuViewController: UIViewController, NavigationDelegate {
     
     var viewModel: MenuViewModel = MenuViewModel()
 

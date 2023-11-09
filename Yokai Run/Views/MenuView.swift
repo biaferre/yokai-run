@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class MenuView: UIView {
-    weak var delegate: MenuViewDelegate?
+    weak var delegate: NavigationDelegate?
 
     // --MARK: initializers
     

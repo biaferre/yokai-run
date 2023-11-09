@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-protocol MenuViewDelegate: AnyObject {
+protocol NavigationDelegate: AnyObject {
     func navigate(to: String)
 }
 
 class MenuViewModel {
-    weak var delegate: MenuViewDelegate?
+    weak var delegate: NavigationDelegate?
         
     func onNavigate() {
         delegate?.navigate(to: "")

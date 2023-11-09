@@ -13,18 +13,37 @@ class GameScene: SKScene {
     
     var heroNode = SKSpriteNode()
     
+    var gameInfo: Game
+    
+    
+    // MARK: basic initializers
+    init(size: CGSize, gameInfo: Game) {
+        self.gameInfo = gameInfo
+        
+        super.init(size: size)
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: updating functions
+    override func update(_ currentTime: TimeInterval) {
+        moveGrounds()
+        
+    }
+    
     override func didMove(to: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         setupGrounds()
         setupHero()
     }
-    
-    override func update(_ currentTime: TimeInterval) {
-        moveGrounds()
-        
-    }
 
+    
+    // MARK: scenery setups
     func setupGrounds() {
         for i in 0...3 {
             let ground = SKSpriteNode(imageNamed: "Grounds")
@@ -51,6 +70,8 @@ class GameScene: SKScene {
         }))
     }
     
+    
+    // MARK: hero setup
     func setupHero() {
         let hero = SKSpriteNode(imageNamed: "Tengu")
         hero.name = "Hero"
