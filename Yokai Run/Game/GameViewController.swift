@@ -12,6 +12,7 @@ import SpriteKit
 class GameViewController: UIViewController {
     
     var viewModel = GameViewModel()
+    var gameScene: GameScene?
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -26,26 +27,38 @@ class GameViewController: UIViewController {
             
         skView.presentScene(scene)
         
+        gameScene = scene
+        
+        
         // MARK: movement recognizer
         
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.swipeUpOccurred(swipe:)))
-        swipeUp.direction = .up
-        view.addGestureRecognizer(swipeUp)
-        
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.swipeDownOccurred(swipe:)))
-        swipeDown.direction = .down
-        view.addGestureRecognizer(swipeDown)
+//        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.swipeUpOccurred(swipe:)))
+//        swipeUp.direction = .up
+//        view.addGestureRecognizer(swipeUp)
+//        
+//        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.swipeDownOccurred(swipe:)))
+//        swipeDown.direction = .down
+//        view.addGestureRecognizer(swipeDown)
     }
+    
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    @objc func swipeUpOccurred(swipe: UITapGestureRecognizer) {
-        print("swipe up")
-    }
     
-    @objc func swipeDownOccurred(swipe: UITapGestureRecognizer) {
-        print("swipe down")
-    }
+    // MARK: swipe settings
+
+//    @objc func swipeUpOccurred(swipe: UITapGestureRecognizer) {
+//        print("swipe up")
+//        gameScene?.jump()
+//    }
+//
+//    @objc func swipeDownOccurred(swipe: UITapGestureRecognizer) {
+//        print("swipe down")
+//        gameScene?.slide()
+//    }
+
+    
+
 }

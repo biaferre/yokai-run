@@ -7,12 +7,28 @@
 
 import SpriteKit
 
+import SpriteKit
+
+class GameContactDelegate: NSObject, SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        if let nodeA = contact.bodyA.node as? SKSpriteNode,
+           let nodeB = contact.bodyB.node as? SKSpriteNode {
+
+            if nodeA.name == "Hero" && nodeB.name == "Obstacle" {
+            }
+            else if nodeA.name == "Hero" && nodeB.name == "Grounds" {
+            }
+        }
+    }
+}
+
+
+
 class GameScene: SKScene {
+    let contactDelegate = GameContactDelegate()
     
     var groundNodes: [SKSpriteNode] = []
-    
     var heroNode = SKSpriteNode()
-    
     var gameInfo: Game
     
     
@@ -28,19 +44,22 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func didMove(to: SKView) {
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
+        self.physicsWorld.contactDelegate = contactDelegate
+
+        setupGrounds()
+        setupHero()
+    }
+    
     
     // MARK: updating functions
     override func update(_ currentTime: TimeInterval) {
         moveGrounds()
-        
     }
     
-    override func didMove(to: SKView) {
-        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        
-        setupGrounds()
-        setupHero()
-    }
 
     
     // MARK: scenery setups
@@ -51,6 +70,9 @@ class GameScene: SKScene {
             ground.size = CGSize(width: (self.scene?.size.width)!, height: 250)
             ground.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             ground.position = CGPoint(x: CGFloat(i) * ground.size.width, y: -(self.frame.size.height / 1.5))
+            
+            ground.physicsBody = SKPhysicsBody(rectangleOf: ground.size)
+            ground.physicsBody?.isDynamic = false
             
             self.addChild(ground)
             groundNodes.append(ground)
@@ -78,8 +100,41 @@ class GameScene: SKScene {
         hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         hero.position = CGPoint(x: -((self.scene?.size.width)!)/3, y: -60)
         
+        hero.physicsBody = SKPhysicsBody(rectangleOf: hero.size)
+        hero.physicsBody?.isDynamic = true
+        
+        hero.physicsBody?.categoryBitMask = 1
+        hero.physicsBody?.contactTestBitMask = 2
+        
         heroNode = hero
         self.addChild(heroNode)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for _ in touches { print("toquei")
+            jump() }
+    }
+    
+    func jump() {
+        heroNode.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 500))
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    }
+    
+    func touchDown(atPoint pos: CGPoint) {
+        jump()
+    }
+    
+    func touchUp(atPoint pos: CGPoint) {
+        heroNode.texture = SKTexture(imageNamed: "Tengu")
+    }
+
+    
+    func slide() {
+        
+    }
+    
     
 }
