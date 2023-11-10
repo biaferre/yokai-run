@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     
     var viewModel = GameViewModel()
     var gameScene: GameScene?
+    var pauseScene: PauseScene?
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -28,17 +29,6 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
         
         gameScene = scene
-        
-        
-        // MARK: movement recognizer
-        
-//        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.swipeUpOccurred(swipe:)))
-//        swipeUp.direction = .up
-//        view.addGestureRecognizer(swipeUp)
-//        
-//        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(GameViewController.swipeDownOccurred(swipe:)))
-//        swipeDown.direction = .down
-//        view.addGestureRecognizer(swipeDown)
     }
     
     
@@ -46,19 +36,24 @@ class GameViewController: UIViewController {
         return true
     }
     
-    
-    // MARK: swipe settings
+    func presentPauseScene() {
+        let transitionFadeLength = 0.30
+        let transitionFadeColor = UIColor.white
+        let pauseTransition = SKTransition.fade(with: transitionFadeColor, duration: transitionFadeLength)
+        pauseTransition.pausesOutgoingScene = true
 
-//    @objc func swipeUpOccurred(swipe: UITapGestureRecognizer) {
-//        print("swipe up")
-//        gameScene?.jump()
-//    }
-//
-//    @objc func swipeDownOccurred(swipe: UITapGestureRecognizer) {
-//        print("swipe down")
-//        gameScene?.slide()
-//    }
-
+        let currentSKView = view as! SKView
+        currentSKView.presentScene(pauseScene!, transition: pauseTransition)
+    }
     
+    func unpauseGame() {
+      let transitionFadeLength = 0.30
+      let transitionFadeColor = UIColor.white
+      let unpauseTransition = SKTransition.fade(with: transitionFadeColor, duration: transitionFadeLength)
+      unpauseTransition.pausesIncomingScene = false
+
+      let currentSKView = view as! SKView
+      currentSKView.presentScene(gameScene!, transition: unpauseTransition)
+    }
 
 }

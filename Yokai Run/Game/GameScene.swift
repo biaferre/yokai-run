@@ -4,16 +4,10 @@
 //
 //  Created by Bof on 09/11/23.
 //
-
+import Foundation
 import SpriteKit
 
-struct ColliderType {
-    static let Hero: UInt32 = 1
-    static let Grounds: UInt32 = 2
-}
-
-
-class GameScene: SKScene, ObservableObject {
+class GameScene: SKScene {
     let contactDelegate = GameContactDelegate()
     
     var groundNodes: [SKSpriteNode] = []
@@ -21,7 +15,7 @@ class GameScene: SKScene, ObservableObject {
     var gameInfo: Game
     
     
-    // MARK: basic initializers
+    // MARK: basic functions
     init(size: CGSize, gameInfo: Game) {
         self.gameInfo = gameInfo
         
@@ -43,15 +37,13 @@ class GameScene: SKScene, ObservableObject {
         setupHero()
     }
     
-    
-    // MARK: updating functions
     override func update(_ currentTime: TimeInterval) {
         moveGrounds()
     }
     
 
     
-    // MARK: scenery setups
+    // MARK: scenery functions
     func setupGrounds() {
         for i in 0...3 {
             let ground = SKSpriteNode(imageNamed: "Grounds")
@@ -106,6 +98,8 @@ class GameScene: SKScene, ObservableObject {
         self.addChild(heroNode)
     }
     
+    
+    // MARK: interaction trackers
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard !contactDelegate.isDoubleJumping else {
             return
@@ -137,11 +131,5 @@ class GameScene: SKScene, ObservableObject {
     func touchUp(atPoint pos: CGPoint) {
         heroNode.texture = SKTexture(imageNamed: "Tengu")
     }
-
-    
-    func slide() {
-        
-    }
-    
     
 }
