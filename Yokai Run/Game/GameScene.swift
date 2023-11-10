@@ -7,24 +7,13 @@
 
 import SpriteKit
 
-import SpriteKit
-
-class GameContactDelegate: NSObject, SKPhysicsContactDelegate {
-    func didBegin(_ contact: SKPhysicsContact) {
-        if let nodeA = contact.bodyA.node as? SKSpriteNode,
-           let nodeB = contact.bodyB.node as? SKSpriteNode {
-
-            if nodeA.name == "Hero" && nodeB.name == "Obstacle" {
-            }
-            else if nodeA.name == "Hero" && nodeB.name == "Grounds" {
-            }
-        }
-    }
+struct ColliderType {
+    static let Hero: UInt32 = 1
+    static let Grounds: UInt32 = 2
 }
 
 
-
-class GameScene: SKScene {
+class GameScene: SKScene, ObservableObject {
     let contactDelegate = GameContactDelegate()
     
     var groundNodes: [SKSpriteNode] = []
@@ -47,7 +36,7 @@ class GameScene: SKScene {
     override func didMove(to: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -15.8)
         self.physicsWorld.contactDelegate = contactDelegate
 
         setupGrounds()
@@ -73,6 +62,8 @@ class GameScene: SKScene {
             
             ground.physicsBody = SKPhysicsBody(rectangleOf: ground.size)
             ground.physicsBody?.isDynamic = false
+            
+            ground.physicsBody?.categoryBitMask = 2
             
             self.addChild(ground)
             groundNodes.append(ground)
@@ -106,25 +97,41 @@ class GameScene: SKScene {
         hero.physicsBody?.categoryBitMask = 1
         hero.physicsBody?.contactTestBitMask = 2
         
+        hero.physicsBody?.restitution = 0.0
+        
+        let uprightConstraint = SKConstraint.zRotation(SKRange(constantValue: 0.0))
+        hero.constraints = [uprightConstraint]
+        
         heroNode = hero
         self.addChild(heroNode)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for _ in touches { print("toquei")
-            jump() }
+        guard !contactDelegate.isDoubleJumping else {
+            return
+        }
+
+        if contactDelegate.isJumping {
+            contactDelegate.isDoubleJumping = true
+            jump(withImpulse: 500)
+        }
+        else {
+            contactDelegate.isJumping = true
+            jump(withImpulse: 520)
+        }
     }
     
-    func jump() {
-        heroNode.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 500))
+    func jump(withImpulse impulse: CGFloat) {
+        heroNode.physicsBody?.applyImpulse(CGVector(dx: 0, dy: impulse))
+
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
+    
     func touchDown(atPoint pos: CGPoint) {
-        jump()
     }
     
     func touchUp(atPoint pos: CGPoint) {

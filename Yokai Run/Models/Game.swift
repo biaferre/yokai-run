@@ -15,6 +15,8 @@ class Game: ObservableObject {
     @Published var isPaused: Bool
     @Published var isDead: Bool
     
+    @Published var gotHit: Bool = false
+    
     init(heroInfo: Hero, miles: Int, inCounter: Bool, isPaused: Bool, isDead: Bool) {
         self.heroInfo = heroInfo
         self.miles = miles
@@ -22,8 +24,5 @@ class Game: ObservableObject {
         self.isPaused = isPaused
         self.isDead = isDead
     }
-    
-    func swipeUp() {
-        heroInfo.heroCurrentY += 20
-    }
+
 }
