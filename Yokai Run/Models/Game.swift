@@ -7,15 +7,19 @@
 
 import Foundation
 
-protocol PauseDelegate: AnyObject {
-    func pauseStateChanged(newValue value: Bool)
-}
-
 class Game: ObservableObject {
-    @Published var heroInfo: Hero
+    @Published var heroSkin: String
+    
+    @Published var heroInitialY: CGFloat
+    @Published var heroCurrentY: CGFloat
+    
+    @Published var stamina: CGFloat
+    
+    @Published var isImmune: Bool
+    
     @Published var miles: Int
     
-    weak var delegate: PauseDelegate?
+    weak var delegate: GameCycleDelegate?
     
     @Published var inCounter: Bool
     @Published var isPaused: Bool {
@@ -28,8 +32,12 @@ class Game: ObservableObject {
     
     @Published var gotHit: Bool = false
     
-    init(heroInfo: Hero, miles: Int, inCounter: Bool, isPaused: Bool, isDead: Bool) {
-        self.heroInfo = heroInfo
+    init(heroSkin: String, heroInitialY: CGFloat, heroCurrentY: CGFloat, stamina: CGFloat, isImmune: Bool, miles: Int, inCounter: Bool, isPaused: Bool, isDead: Bool) {
+        self.heroSkin = heroSkin
+        self.heroInitialY = heroInitialY
+        self.heroCurrentY = heroCurrentY
+        self.stamina = stamina
+        self.isImmune = isImmune
         self.miles = miles
         self.inCounter = inCounter
         self.isPaused = isPaused

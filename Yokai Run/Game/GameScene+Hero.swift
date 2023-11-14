@@ -21,7 +21,7 @@ extension GameScene {
         hero.physicsBody?.isDynamic = true
         
         hero.physicsBody?.categoryBitMask = 1
-        hero.physicsBody?.contactTestBitMask = 2
+        hero.physicsBody?.contactTestBitMask = 2 | 4
         
         hero.physicsBody?.restitution = 0.0
         

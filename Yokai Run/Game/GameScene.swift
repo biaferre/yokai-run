@@ -8,9 +8,10 @@ import Foundation
 import SpriteKit
 
 class GameScene: SKScene {
-    let contactDelegate = GameContactDelegate()
+    let contactDelegate = GameCollisionDelegate()
     
     var groundNodes: [SKSpriteNode] = []
+    var obstacleNodes: [SKSpriteNode] = []
     var heroNode = SKSpriteNode()
     var gameInfo: Game
     
@@ -44,6 +45,7 @@ class GameScene: SKScene {
         
         setupGrounds()
         setupHero()
+        setupObstacles()
         setupGUI()
     }
     

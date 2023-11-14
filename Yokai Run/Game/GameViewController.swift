@@ -84,7 +84,11 @@ class GameViewController: UIViewController {
 
 }
 
-extension GameViewController: PauseDelegate {
+extension GameViewController: GameCycleDelegate {
+    func didGetHit(value: Int) {
+        print("contato")
+    }
+    
     func pauseStateChanged(newValue value: Bool) {
         gameScene?.view?.isPaused.toggle()
         pauseView.isHidden.toggle()

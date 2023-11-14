@@ -22,7 +22,7 @@
 		D41BC7282AFD6E2C00263E83 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7272AFD6E2C00263E83 /* Hero.swift */; };
 		D41BC72A2AFD6E3B00263E83 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7292AFD6E3B00263E83 /* Player.swift */; };
 		D41BC72C2AFD6EAB00263E83 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC72B2AFD6EAB00263E83 /* Skin.swift */; };
-		D41BC7312AFE865700263E83 /* GameContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7302AFE865700263E83 /* GameContactDelegate.swift */; };
+		D41BC7312AFE865700263E83 /* GameCollisionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7302AFE865700263E83 /* GameCollisionDelegate.swift */; };
 		D466F6DD2AF92C99004AC986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6DC2AF92C99004AC986 /* AppDelegate.swift */; };
 		D466F6DF2AF92C99004AC986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */; };
 		D466F6E92AF92C9A004AC986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D466F6E82AF92C9A004AC986 /* Assets.xcassets */; };
@@ -41,6 +41,8 @@
 		D4FEF8392B029A91007F95B2 /* GameScene+GUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */; };
 		D4FEF83A2B02A772007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
 		D4FEF83B2B02A773007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
+		D4FEF83D2B03E5E4007F95B2 /* GameCycleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83C2B03E5E4007F95B2 /* GameCycleDelegate.swift */; };
+		D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +78,7 @@
 		D41BC7272AFD6E2C00263E83 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		D41BC7292AFD6E3B00263E83 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D41BC72B2AFD6EAB00263E83 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
-		D41BC7302AFE865700263E83 /* GameContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContactDelegate.swift; sourceTree = "<group>"; };
+		D41BC7302AFE865700263E83 /* GameCollisionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollisionDelegate.swift; sourceTree = "<group>"; };
 		D466F6D92AF92C99004AC986 /* Yokai Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yokai Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D466F6DC2AF92C99004AC986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,8 @@
 		D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Hero.swift"; sourceTree = "<group>"; };
 		D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Grounds.swift"; sourceTree = "<group>"; };
 		D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GUI.swift"; sourceTree = "<group>"; };
+		D4FEF83C2B03E5E4007F95B2 /* GameCycleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCycleDelegate.swift; sourceTree = "<group>"; };
+		D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Obstacles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,13 +170,15 @@
 			isa = PBXGroup;
 			children = (
 				D41BC7212AFD5F8100263E83 /* GameScene.swift */,
+				D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */,
 				D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */,
 				D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */,
 				D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */,
 				D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */,
-				D41BC7302AFE865700263E83 /* GameContactDelegate.swift */,
-				D41BC71A2AFC219800263E83 /* GameViewController.swift */,
 				D41BC7252AFD6E0F00263E83 /* GameViewModel.swift */,
+				D41BC71A2AFC219800263E83 /* GameViewController.swift */,
+				D41BC7302AFE865700263E83 /* GameCollisionDelegate.swift */,
+				D4FEF83C2B03E5E4007F95B2 /* GameCycleDelegate.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -417,8 +423,9 @@
 				D4FEF8392B029A91007F95B2 /* GameScene+GUI.swift in Sources */,
 				D466F7152AFA9819004AC986 /* MenuViewController.swift in Sources */,
 				D41BC7262AFD6E0F00263E83 /* GameViewModel.swift in Sources */,
-				D41BC7312AFE865700263E83 /* GameContactDelegate.swift in Sources */,
+				D41BC7312AFE865700263E83 /* GameCollisionDelegate.swift in Sources */,
 				D41BC7132AFC1A2C00263E83 /* MenuViewModel.swift in Sources */,
+				D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */,
 				D41BC7242AFD6B4500263E83 /* Game.swift in Sources */,
 				D41BC71B2AFC219800263E83 /* GameViewController.swift in Sources */,
 				D4FEF8352B029962007F95B2 /* GameScene+Hero.swift in Sources */,
@@ -436,6 +443,7 @@
 				D466F71D2AFAAF61004AC986 /* MainButtonComponent.swift in Sources */,
 				D41BC70C2AFC142800263E83 /* CreditView.swift in Sources */,
 				D41BC72C2AFD6EAB00263E83 /* Skin.swift in Sources */,
+				D4FEF83D2B03E5E4007F95B2 /* GameCycleDelegate.swift in Sources */,
 				D41BC7152AFC1A5400263E83 /* CreditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
