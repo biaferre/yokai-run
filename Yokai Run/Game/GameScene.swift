@@ -7,11 +7,14 @@
 import Foundation
 import SpriteKit
 
-class GameScene: SKScene {
-    let contactDelegate = GameCollisionDelegate()
-    
+class GameScene: SKScene {    
     var groundNodes: [SKSpriteNode] = []
-    var obstacleNodes: [SKSpriteNode] = []
+    
+    var isJumping: Bool = false
+    var isDoubleJumping: Bool = false
+    
+    var obstacleNodes = [SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle")]
+    
     var heroNode = SKSpriteNode()
     var gameInfo: Game
     
@@ -36,7 +39,7 @@ class GameScene: SKScene {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -15.8)
-        self.physicsWorld.contactDelegate = contactDelegate
+        self.physicsWorld.contactDelegate = self
         
         self.scaleMode = .aspectFit
         
@@ -51,25 +54,6 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         moveGrounds()
+        moveObstacles()
     }
-    
-    // MARK: movement functions
-    
-    func moveGrounds() {
-        self.enumerateChildNodes(withName: "Ground", using: ({
-            (node, error) in
-            
-            node.position.x -= 2
-            
-            if node.position.x < -((self.scene?.size.width)!) {
-                node.position.x += (self.scene?.size.width)! * 3
-            }
-        }))
-    }
-    
-    func jump(withImpulse impulse: CGFloat) {
-        heroNode.physicsBody?.applyImpulse(CGVector(dx: 0, dy: impulse))
-
-    }
-    
 }

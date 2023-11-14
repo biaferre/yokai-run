@@ -15,16 +15,16 @@ extension GameScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for _ in touches {
                 
-                guard !contactDelegate.isDoubleJumping else {
+                guard !self.isDoubleJumping else {
                     return
                 }
                 
-                if contactDelegate.isJumping {
-                    contactDelegate.isDoubleJumping = true
+                if self.isJumping {
+                    self.isDoubleJumping = true
                     jump(withImpulse: 280)
                 }
                 else {
-                    contactDelegate.isJumping = true
+                    self.isJumping = true
                     jump(withImpulse: 580)
                 }
         }

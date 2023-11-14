@@ -14,11 +14,10 @@ class GameViewController: UIViewController {
     var viewModel = GameViewModel()
     var gameScene: GameScene?
     
-    
     override func viewDidLoad() {
             super.viewDidLoad()
         
-        viewModel.gameInfo.delegate = self
+        viewModel.gameInfo.cycleDelegate = self
             
         // MARK: scene configurations
         
@@ -33,10 +32,15 @@ class GameViewController: UIViewController {
         view.addSubview(pauseButton)
         
         pauseView.addViewModel(gameViewModel: viewModel)
+        
         pauseView.isHidden = true
+        gameOverView.isHidden = true
+
         print(pauseView.anchorPoint)
 
         skView.addSubview(pauseView)
+        skView.addSubview(gameOverView)
+
         skView.presentScene(scene)
         
         setupLayout()
@@ -49,11 +53,17 @@ class GameViewController: UIViewController {
         return pauseButton
     }()
     
+    var gameOverView: UIImageView = {
+        let image = UIImage(named: "Obstacle")
+        return UIImageView(image: image)
+    }()
+    
     var pauseView: PauseView = {
         var pauseView = PauseView()
         pauseView.layer.zPosition = 10
         return pauseView
     }()
+    
     
     func setupLayout() {
         pauseButton.translatesAutoresizingMaskIntoConstraints = false
@@ -69,6 +79,14 @@ class GameViewController: UIViewController {
             pauseView.widthAnchor.constraint(equalToConstant: 200),
             pauseView.heightAnchor.constraint(equalToConstant: 400)
         ])
+        
+        gameOverView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            gameOverView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            gameOverView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            gameOverView.widthAnchor.constraint(equalToConstant: 200),
+            gameOverView.heightAnchor.constraint(equalToConstant: 200)
+        ])
     }
     
     
@@ -82,17 +100,4 @@ class GameViewController: UIViewController {
     }
     
 
-}
-
-extension GameViewController: GameCycleDelegate {
-    func didGetHit(value: Int) {
-        print("contato")
-    }
-    
-    func pauseStateChanged(newValue value: Bool) {
-        gameScene?.view?.isPaused.toggle()
-        pauseView.isHidden.toggle()
-        print(pauseView.isHidden)
-    }
-    
 }

@@ -8,11 +8,7 @@
 import Foundation
 import SpriteKit
 
-class GameCollisionDelegate: NSObject, SKPhysicsContactDelegate {
-    
-    var isJumping: Bool = false
-    var isDoubleJumping: Bool = false
-    var gotHit: Bool = false
+extension GameScene: SKPhysicsContactDelegate {
     
     struct ColliderType {
         static let HERO: UInt32 = 1
@@ -30,7 +26,13 @@ class GameCollisionDelegate: NSObject, SKPhysicsContactDelegate {
             isDoubleJumping = false
         }
         else if collision == ColliderType.HERO | ColliderType.OBSTACLE {
-            gotHit = true
+            gameInfo.stamina -= 5
+        }
+        else if collision == ColliderType.HERO | ColliderType.PLATFORM {
+            isJumping = false
+            isDoubleJumping = false
+            print("plataforma")
         }
     }
+
 }

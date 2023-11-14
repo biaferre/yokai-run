@@ -26,9 +26,15 @@ extension GameScene {
         hero.physicsBody?.restitution = 0.0
         
         let uprightConstraint = SKConstraint.zRotation(SKRange(constantValue: 0.0))
+        
         hero.constraints = [uprightConstraint]
         
         heroNode = hero
         self.addChild(heroNode)
+    }
+    
+    func jump(withImpulse impulse: CGFloat) {
+        heroNode.physicsBody?.applyImpulse(CGVector(dx: 0, dy: impulse))
+
     }
 }

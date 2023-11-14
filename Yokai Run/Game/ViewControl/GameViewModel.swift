@@ -17,7 +17,7 @@ class GameViewModel: ObservableObject {
         self.gameInfo = Game(heroSkin: "Tengu", // later implement switching with selection
                              heroInitialY: -60,
                              heroCurrentY: -60,
-                             stamina: 100.0,
+                             stamina: 10.0,
                              isImmune: false,
                                miles: 0,
                                inCounter: false,
@@ -31,4 +31,5 @@ class GameViewModel: ObservableObject {
     func didPause() {
         gameInfo.isPaused.toggle()
     }
+
 }

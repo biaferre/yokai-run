@@ -27,4 +27,16 @@ extension GameScene {
             groundNodes.remove(at: 0)
         }
     }
+    
+    func moveGrounds() {
+        self.enumerateChildNodes(withName: "Ground", using: ({
+            (node, error) in
+            
+            node.position.x -= 2
+            
+            if node.position.x < -((self.scene?.size.width)!) {
+                node.position.x += (self.scene?.size.width)! * 3
+            }
+        }))
+    }
 }

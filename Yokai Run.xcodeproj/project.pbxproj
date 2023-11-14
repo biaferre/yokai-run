@@ -41,7 +41,7 @@
 		D4FEF8392B029A91007F95B2 /* GameScene+GUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */; };
 		D4FEF83A2B02A772007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
 		D4FEF83B2B02A773007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
-		D4FEF83D2B03E5E4007F95B2 /* GameCycleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83C2B03E5E4007F95B2 /* GameCycleDelegate.swift */; };
+		D4FEF83D2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83C2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift */; };
 		D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,7 +99,7 @@
 		D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Hero.swift"; sourceTree = "<group>"; };
 		D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Grounds.swift"; sourceTree = "<group>"; };
 		D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GUI.swift"; sourceTree = "<group>"; };
-		D4FEF83C2B03E5E4007F95B2 /* GameCycleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCycleDelegate.swift; sourceTree = "<group>"; };
+		D4FEF83C2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameCycleDelegate.swift"; sourceTree = "<group>"; };
 		D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Obstacles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,15 +170,13 @@
 			isa = PBXGroup;
 			children = (
 				D41BC7212AFD5F8100263E83 /* GameScene.swift */,
-				D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */,
 				D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */,
 				D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */,
 				D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */,
 				D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */,
-				D41BC7252AFD6E0F00263E83 /* GameViewModel.swift */,
-				D41BC71A2AFC219800263E83 /* GameViewController.swift */,
-				D41BC7302AFE865700263E83 /* GameCollisionDelegate.swift */,
-				D4FEF83C2B03E5E4007F95B2 /* GameCycleDelegate.swift */,
+				D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */,
+				D4FEF8402B03EF41007F95B2 /* Delegates */,
+				D4FEF8412B03EF4C007F95B2 /* ViewControl */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -282,6 +280,24 @@
 				D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D4FEF8402B03EF41007F95B2 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D41BC7302AFE865700263E83 /* GameCollisionDelegate.swift */,
+				D4FEF83C2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		D4FEF8412B03EF4C007F95B2 /* ViewControl */ = {
+			isa = PBXGroup;
+			children = (
+				D41BC7252AFD6E0F00263E83 /* GameViewModel.swift */,
+				D41BC71A2AFC219800263E83 /* GameViewController.swift */,
+			);
+			path = ViewControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,7 +459,7 @@
 				D466F71D2AFAAF61004AC986 /* MainButtonComponent.swift in Sources */,
 				D41BC70C2AFC142800263E83 /* CreditView.swift in Sources */,
 				D41BC72C2AFD6EAB00263E83 /* Skin.swift in Sources */,
-				D4FEF83D2B03E5E4007F95B2 /* GameCycleDelegate.swift in Sources */,
+				D4FEF83D2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift in Sources */,
 				D41BC7152AFC1A5400263E83 /* CreditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
