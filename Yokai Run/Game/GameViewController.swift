@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     var viewModel = GameViewModel()
     var gameScene: GameScene?
     
+    
     override func viewDidLoad() {
             super.viewDidLoad()
         
@@ -31,6 +32,8 @@ class GameViewController: UIViewController {
         view.addSubview(skView)
         view.addSubview(pauseButton)
         
+        pauseView.addViewModel(gameViewModel: viewModel)
+        pauseView.isHidden = true
         print(pauseView.anchorPoint)
 
         skView.addSubview(pauseView)
@@ -71,8 +74,8 @@ class GameViewController: UIViewController {
     
     @objc func pausedButton() {
         viewModel.didPause()
-        print(viewModel.gameInfo.isPaused)
     }
+    
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -85,6 +88,7 @@ extension GameViewController: PauseDelegate {
     func pauseStateChanged(newValue value: Bool) {
         gameScene?.view?.isPaused.toggle()
         pauseView.isHidden.toggle()
+        print(pauseView.isHidden)
     }
     
 }
