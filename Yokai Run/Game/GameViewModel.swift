@@ -29,4 +29,8 @@ class GameViewModel: ObservableObject {
             [weak self] in self?.objectWillChange.send()
         }.store(in: &cancellables)
     }
+    
+    func didPause() {
+        gameInfo.isPaused.toggle()
+    }
 }

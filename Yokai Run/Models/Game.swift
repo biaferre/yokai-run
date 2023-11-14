@@ -7,12 +7,23 @@
 
 import Foundation
 
+protocol PauseDelegate: AnyObject {
+    func pauseStateChanged(newValue value: Bool)
+}
+
 class Game: ObservableObject {
     @Published var heroInfo: Hero
     @Published var miles: Int
     
+    weak var delegate: PauseDelegate?
+    
     @Published var inCounter: Bool
-    @Published var isPaused: Bool
+    @Published var isPaused: Bool {
+        didSet {
+            delegate?.pauseStateChanged(newValue: isPaused)
+        }
+    }
+    
     @Published var isDead: Bool
     
     @Published var gotHit: Bool = false

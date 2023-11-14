@@ -38,6 +38,12 @@ class MenuView: UIView {
     }
     
     func setupLayout(){
+        titleBanner.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleBanner.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3, constant: 0),
+            titleBanner.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.55, constant: 0)
+        ])
+        
         contentStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             contentStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -49,44 +55,32 @@ class MenuView: UIView {
     
     // --MARK: title
 
-    lazy var title: UILabel = {
-        var label = UILabel()
-        label.text = "Yokai Run"
-        label.textColor = .red
-        label.font = UIFont(name: "SF Pro", size: 100)
-        
-        return label
+    lazy var titleBanner: UIImageView = {
+        let img = UIImage(named: "TitleBanner")!
+        let imgView = UIImageView(image: img)
+        imgView.contentMode = .scaleToFill
+        return imgView
     }()
-    
     
     
     // --MARK: buttons
     lazy var startButton: UIButton = {
-        
-        var button = ButtonComponent(type: .primary, title: "Start").button
-        
+        var button = MainButtonComponent(type: .primary, title: "Start").button
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
         return button
 
     }()
     
     lazy var archiveButton: UIButton = {
-        
-        var button = ButtonComponent(type: .primary, title: "Archive").button
-        
+        var button = MainButtonComponent(type: .primary, title: "Archive").button
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
         return button
         
     }()
     
     lazy var creditsButton: UIButton = {
-        
-        var button = ButtonComponent(type: .primary, title: "Credits").button
-        
+        var button = MainButtonComponent(type: .primary, title: "Credits").button
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
         return button
         
     }()
@@ -112,7 +106,7 @@ class MenuView: UIView {
     }()
     
     lazy var contentStack: UIStackView = {
-       let stack = UIStackView(arrangedSubviews: [title, buttonStack])
+       let stack = UIStackView(arrangedSubviews: [titleBanner, buttonStack])
         
         stack.axis = .vertical
         stack.spacing = 20.0

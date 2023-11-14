@@ -1,5 +1,5 @@
 //
-//  ButtonComponent.swift
+//  MainButtonComponent.swift
 //  Yokai Run
 //
 //  Created by Bof on 07/11/23.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ButtonComponent: UIButton {
+class MainButtonComponent: UIButton {
     var type: ButtonScale
     var title: String
     var button: UIButton
@@ -22,14 +22,18 @@ class ButtonComponent: UIButton {
         }
     
     init(type: ButtonScale, title: String) {
+
         self.type = type
         self.title = title
-        self.button = UIButton(type: .roundedRect) // Inicialize 'self.button' aqui
-        super.init(frame: .zero)
-        
+        self.button = UIButton(type: .roundedRect)
+                
         self.button.setTitle(title, for: .normal)
-        self.button.tintColor = .black
-        self.button.backgroundColor = .systemRed
+        self.button.titleLabel?.font = UIFont(name: "Neo-Tech", size: 36)
+        
+        self.button.tintColor = type == .primary ? .black : .systemRed
+        self.button.backgroundColor = type == .primary ? .systemRed : .black
+
+        super.init(frame: .zero)
 
         }
     

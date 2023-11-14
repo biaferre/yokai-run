@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "tengu.png",
+      "filename" : "Lotus.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Lotus@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Lotus@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

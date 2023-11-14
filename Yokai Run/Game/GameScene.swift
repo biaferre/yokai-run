@@ -15,7 +15,8 @@ class GameScene: SKScene {
     var gameInfo: Game
     
     
-    // MARK: basic functions
+    // MARK: inits functions
+
     init(size: CGSize, gameInfo: Game) {
         self.gameInfo = gameInfo
         
@@ -27,41 +28,30 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // MARK: basic functions
+
     override func didMove(to: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -15.8)
         self.physicsWorld.contactDelegate = contactDelegate
+        
+        self.scaleMode = .aspectFit
+        
+        isUserInteractionEnabled = true
 
+        
         setupGrounds()
         setupHero()
+        setupGUI()
     }
     
     override func update(_ currentTime: TimeInterval) {
         moveGrounds()
     }
     
-
-    
-    // MARK: scenery functions
-    func setupGrounds() {
-        for i in 0...3 {
-            let ground = SKSpriteNode(imageNamed: "Grounds")
-            ground.name = "Ground"
-            ground.size = CGSize(width: (self.scene?.size.width)!, height: 250)
-            ground.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-            ground.position = CGPoint(x: CGFloat(i) * ground.size.width, y: -(self.frame.size.height / 1.5))
-            
-            ground.physicsBody = SKPhysicsBody(rectangleOf: ground.size)
-            ground.physicsBody?.isDynamic = false
-            
-            ground.physicsBody?.categoryBitMask = 2
-            
-            self.addChild(ground)
-            groundNodes.append(ground)
-            groundNodes.remove(at: 0)
-        }
-    }
+    // MARK: movement functions
     
     func moveGrounds() {
         self.enumerateChildNodes(withName: "Ground", using: ({
@@ -75,61 +65,9 @@ class GameScene: SKScene {
         }))
     }
     
-    
-    // MARK: hero setup
-    func setupHero() {
-        let hero = SKSpriteNode(imageNamed: "Tengu")
-        hero.name = "Hero"
-        hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        hero.position = CGPoint(x: -((self.scene?.size.width)!)/3, y: -60)
-        
-        hero.physicsBody = SKPhysicsBody(rectangleOf: hero.size)
-        hero.physicsBody?.isDynamic = true
-        
-        hero.physicsBody?.categoryBitMask = 1
-        hero.physicsBody?.contactTestBitMask = 2
-        
-        hero.physicsBody?.restitution = 0.0
-        
-        let uprightConstraint = SKConstraint.zRotation(SKRange(constantValue: 0.0))
-        hero.constraints = [uprightConstraint]
-        
-        heroNode = hero
-        self.addChild(heroNode)
-    }
-    
-    
-    // MARK: interaction trackers
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard !contactDelegate.isDoubleJumping else {
-            return
-        }
-
-        if contactDelegate.isJumping {
-            contactDelegate.isDoubleJumping = true
-            jump(withImpulse: 500)
-        }
-        else {
-            contactDelegate.isJumping = true
-            jump(withImpulse: 520)
-        }
-    }
-    
     func jump(withImpulse impulse: CGFloat) {
         heroNode.physicsBody?.applyImpulse(CGVector(dx: 0, dy: impulse))
 
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-    }
-    
-    
-    func touchDown(atPoint pos: CGPoint) {
-    }
-    
-    func touchUp(atPoint pos: CGPoint) {
-        heroNode.texture = SKTexture(imageNamed: "Tengu")
     }
     
 }

@@ -7,11 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D413544E2AFEC10900FD0A01 /* ColliderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D413544D2AFEC10900FD0A01 /* ColliderTypes.swift */; };
+		D41354502AFEC2A000FD0A01 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D413544F2AFEC2A000FD0A01 /* PauseView.swift */; };
 		D41BC70A2AFC13DD00263E83 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7092AFC13DD00263E83 /* ArchiveView.swift */; };
 		D41BC70C2AFC142800263E83 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC70B2AFC142800263E83 /* CreditView.swift */; };
+		D41BC70F2AFC152D00263E83 /* UIView+FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC70E2AFC152D00263E83 /* UIView+FindViewController.swift */; };
+		D41BC7132AFC1A2C00263E83 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7122AFC1A2C00263E83 /* MenuViewModel.swift */; };
+		D41BC7152AFC1A5400263E83 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7142AFC1A5400263E83 /* CreditViewController.swift */; };
+		D41BC7172AFC1A6B00263E83 /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7162AFC1A6B00263E83 /* ArchiveViewController.swift */; };
+		D41BC71B2AFC219800263E83 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC71A2AFC219800263E83 /* GameViewController.swift */; };
+		D41BC7222AFD5F8100263E83 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7212AFD5F8100263E83 /* GameScene.swift */; };
+		D41BC7242AFD6B4500263E83 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7232AFD6B4500263E83 /* Game.swift */; };
+		D41BC7262AFD6E0F00263E83 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7252AFD6E0F00263E83 /* GameViewModel.swift */; };
+		D41BC7282AFD6E2C00263E83 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7272AFD6E2C00263E83 /* Hero.swift */; };
+		D41BC72A2AFD6E3B00263E83 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7292AFD6E3B00263E83 /* Player.swift */; };
+		D41BC72C2AFD6EAB00263E83 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC72B2AFD6EAB00263E83 /* Skin.swift */; };
+		D41BC7312AFE865700263E83 /* GameContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7302AFE865700263E83 /* GameContactDelegate.swift */; };
 		D466F6DD2AF92C99004AC986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6DC2AF92C99004AC986 /* AppDelegate.swift */; };
 		D466F6DF2AF92C99004AC986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */; };
-		D466F6E12AF92C99004AC986 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6E02AF92C99004AC986 /* GameViewController.swift */; };
 		D466F6E92AF92C9A004AC986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D466F6E82AF92C9A004AC986 /* Assets.xcassets */; };
 		D466F6F72AF92C9A004AC986 /* Yokai_RunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6F62AF92C9A004AC986 /* Yokai_RunTests.swift */; };
 		D466F7012AF92C9A004AC986 /* Yokai_RunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F7002AF92C9A004AC986 /* Yokai_RunUITests.swift */; };
@@ -19,7 +32,15 @@
 		D466F7122AFA9685004AC986 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F7112AFA9685004AC986 /* MenuView.swift */; };
 		D466F7152AFA9819004AC986 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F7142AFA9819004AC986 /* MenuViewController.swift */; };
 		D466F71B2AFAABC5004AC986 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F71A2AFAABC5004AC986 /* ButtonType.swift */; };
-		D466F71D2AFAAF61004AC986 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F71C2AFAAF61004AC986 /* ButtonComponent.swift */; };
+		D466F71D2AFAAF61004AC986 /* MainButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F71C2AFAAF61004AC986 /* MainButtonComponent.swift */; };
+		D4FEF82F2B0250AC007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
+		D4FEF8312B02515D007F95B2 /* MinimalButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */; };
+		D4FEF8332B02989D007F95B2 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */; };
+		D4FEF8352B029962007F95B2 /* GameScene+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */; };
+		D4FEF8372B029993007F95B2 /* GameScene+Grounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */; };
+		D4FEF8392B029A91007F95B2 /* GameScene+GUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */; };
+		D4FEF83A2B02A772007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
+		D4FEF83B2B02A773007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +61,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D413544D2AFEC10900FD0A01 /* ColliderTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderTypes.swift; sourceTree = "<group>"; };
+		D413544F2AFEC2A000FD0A01 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		D41BC7092AFC13DD00263E83 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
 		D41BC70B2AFC142800263E83 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
+		D41BC70E2AFC152D00263E83 /* UIView+FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FindViewController.swift"; sourceTree = "<group>"; };
+		D41BC7122AFC1A2C00263E83 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		D41BC7142AFC1A5400263E83 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		D41BC7162AFC1A6B00263E83 /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
+		D41BC71A2AFC219800263E83 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D41BC7212AFD5F8100263E83 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D41BC7232AFD6B4500263E83 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		D41BC7252AFD6E0F00263E83 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		D41BC7272AFD6E2C00263E83 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		D41BC7292AFD6E3B00263E83 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		D41BC72B2AFD6EAB00263E83 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
+		D41BC7302AFE865700263E83 /* GameContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContactDelegate.swift; sourceTree = "<group>"; };
 		D466F6D92AF92C99004AC986 /* Yokai Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yokai Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D466F6DC2AF92C99004AC986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D466F6E02AF92C99004AC986 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D466F6E82AF92C9A004AC986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D466F6ED2AF92C9A004AC986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D466F6F22AF92C9A004AC986 /* Yokai RunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yokai RunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +90,13 @@
 		D466F7112AFA9685004AC986 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D466F7142AFA9819004AC986 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D466F71A2AFAABC5004AC986 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
-		D466F71C2AFAAF61004AC986 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		D466F71C2AFAAF61004AC986 /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonComponent.swift; sourceTree = "<group>"; };
+		D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neo-Tech.otf"; sourceTree = "<group>"; };
+		D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalButtonComponent.swift; sourceTree = "<group>"; };
+		D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
+		D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Hero.swift"; sourceTree = "<group>"; };
+		D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Grounds.swift"; sourceTree = "<group>"; };
+		D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GUI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +124,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D41BC70D2AFC148800263E83 /* New Group */ = {
+		D41BC70D2AFC148800263E83 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D41BC70E2AFC152D00263E83 /* UIView+FindViewController.swift */,
 			);
-			path = "New Group";
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D41BC7112AFC164700263E83 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D413544D2AFEC10900FD0A01 /* ColliderTypes.swift */,
+				D41BC7292AFD6E3B00263E83 /* Player.swift */,
+				D41BC72B2AFD6EAB00263E83 /* Skin.swift */,
+				D41BC7232AFD6B4500263E83 /* Game.swift */,
+				D41BC7272AFD6E2C00263E83 /* Hero.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D41BC71E2AFC21A700263E83 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				D413544F2AFEC2A000FD0A01 /* PauseView.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		D41BC71F2AFD5F5100263E83 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D466F7142AFA9819004AC986 /* MenuViewController.swift */,
+				D41BC7162AFC1A6B00263E83 /* ArchiveViewController.swift */,
+				D41BC7142AFC1A5400263E83 /* CreditViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D41BC7202AFD5F6400263E83 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				D41BC7212AFD5F8100263E83 /* GameScene.swift */,
+				D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */,
+				D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */,
+				D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */,
+				D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */,
+				D41BC7302AFE865700263E83 /* GameContactDelegate.swift */,
+				D41BC71A2AFC219800263E83 /* GameViewController.swift */,
+				D41BC7252AFD6E0F00263E83 /* GameViewModel.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		D466F6D02AF92C98004AC986 = {
@@ -114,13 +200,14 @@
 		D466F6DB2AF92C99004AC986 /* Yokai Run */ = {
 			isa = PBXGroup;
 			children = (
-				D41BC70D2AFC148800263E83 /* New Group */,
+				D4FEF82B2B024D54007F95B2 /* Assets */,
+				D41BC7202AFD5F6400263E83 /* Game */,
 				D466F7132AFA9689004AC986 /* Views */,
-				D466F7162AFA9827004AC986 /* ViewControllers */,
+				D41BC7112AFC164700263E83 /* Models */,
+				D466F7162AFA9827004AC986 /* ViewModels */,
+				D41BC70D2AFC148800263E83 /* Extensions */,
 				D466F6DC2AF92C99004AC986 /* AppDelegate.swift */,
-				D466F6E02AF92C99004AC986 /* GameViewController.swift */,
 				D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */,
-				D466F6E82AF92C9A004AC986 /* Assets.xcassets */,
 				D466F6ED2AF92C9A004AC986 /* Info.plist */,
 			);
 			path = "Yokai Run";
@@ -146,20 +233,22 @@
 		D466F7132AFA9689004AC986 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D466F7182AFAABA2004AC986 /* Components */,
+				D41BC71E2AFC21A700263E83 /* Modals */,
 				D466F7112AFA9685004AC986 /* MenuView.swift */,
 				D41BC7092AFC13DD00263E83 /* ArchiveView.swift */,
 				D41BC70B2AFC142800263E83 /* CreditView.swift */,
+				D41BC71F2AFD5F5100263E83 /* Controllers */,
+				D466F7182AFAABA2004AC986 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D466F7162AFA9827004AC986 /* ViewControllers */ = {
+		D466F7162AFA9827004AC986 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				D466F7142AFA9819004AC986 /* MenuViewController.swift */,
+				D41BC7122AFC1A2C00263E83 /* MenuViewModel.swift */,
 			);
-			path = ViewControllers;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D466F7182AFAABA2004AC986 /* Components */ = {
@@ -174,9 +263,19 @@
 			isa = PBXGroup;
 			children = (
 				D466F71A2AFAABC5004AC986 /* ButtonType.swift */,
-				D466F71C2AFAAF61004AC986 /* ButtonComponent.swift */,
+				D466F71C2AFAAF61004AC986 /* MainButtonComponent.swift */,
+				D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D4FEF82B2B024D54007F95B2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D466F6E82AF92C9A004AC986 /* Assets.xcassets */,
+				D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D466F6E92AF92C9A004AC986 /* Assets.xcassets in Resources */,
+				D4FEF82F2B0250AC007F95B2 /* Neo-Tech.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FEF83A2B02A772007F95B2 /* Neo-Tech.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FEF83B2B02A773007F95B2 /* Neo-Tech.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,15 +410,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41BC7222AFD5F8100263E83 /* GameScene.swift in Sources */,
+				D4FEF8372B029993007F95B2 /* GameScene+Grounds.swift in Sources */,
 				D466F7122AFA9685004AC986 /* MenuView.swift in Sources */,
 				D466F71B2AFAABC5004AC986 /* ButtonType.swift in Sources */,
-				D466F6E12AF92C99004AC986 /* GameViewController.swift in Sources */,
+				D4FEF8392B029A91007F95B2 /* GameScene+GUI.swift in Sources */,
 				D466F7152AFA9819004AC986 /* MenuViewController.swift in Sources */,
+				D41BC7262AFD6E0F00263E83 /* GameViewModel.swift in Sources */,
+				D41BC7312AFE865700263E83 /* GameContactDelegate.swift in Sources */,
+				D41BC7132AFC1A2C00263E83 /* MenuViewModel.swift in Sources */,
+				D41BC7242AFD6B4500263E83 /* Game.swift in Sources */,
+				D41BC71B2AFC219800263E83 /* GameViewController.swift in Sources */,
+				D4FEF8352B029962007F95B2 /* GameScene+Hero.swift in Sources */,
+				D413544E2AFEC10900FD0A01 /* ColliderTypes.swift in Sources */,
+				D41BC70F2AFC152D00263E83 /* UIView+FindViewController.swift in Sources */,
+				D41354502AFEC2A000FD0A01 /* PauseView.swift in Sources */,
+				D4FEF8312B02515D007F95B2 /* MinimalButtonComponent.swift in Sources */,
 				D466F6DD2AF92C99004AC986 /* AppDelegate.swift in Sources */,
 				D466F6DF2AF92C99004AC986 /* SceneDelegate.swift in Sources */,
+				D41BC7172AFC1A6B00263E83 /* ArchiveViewController.swift in Sources */,
+				D41BC72A2AFD6E3B00263E83 /* Player.swift in Sources */,
+				D41BC7282AFD6E2C00263E83 /* Hero.swift in Sources */,
+				D4FEF8332B02989D007F95B2 /* GameScene+Touches.swift in Sources */,
 				D41BC70A2AFC13DD00263E83 /* ArchiveView.swift in Sources */,
-				D466F71D2AFAAF61004AC986 /* ButtonComponent.swift in Sources */,
+				D466F71D2AFAAF61004AC986 /* MainButtonComponent.swift in Sources */,
 				D41BC70C2AFC142800263E83 /* CreditView.swift in Sources */,
+				D41BC72C2AFD6EAB00263E83 /* Skin.swift in Sources */,
+				D41BC7152AFC1A5400263E83 /* CreditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

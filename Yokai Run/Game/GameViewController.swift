@@ -13,47 +13,78 @@ class GameViewController: UIViewController {
     
     var viewModel = GameViewModel()
     var gameScene: GameScene?
-    var pauseScene: PauseScene?
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        
+        viewModel.gameInfo.delegate = self
             
         // MARK: scene configurations
         
         let skView = SKView(frame: view.frame)
-        view.addSubview(skView)
-            
+        
         let scene = GameScene(size: skView.bounds.size, gameInfo: viewModel.gameInfo)
         scene.scaleMode = .aspectFill
-            
-        skView.presentScene(scene)
         
         gameScene = scene
+                
+        view.addSubview(skView)
+        view.addSubview(pauseButton)
+        
+        print(pauseView.anchorPoint)
+
+        skView.addSubview(pauseView)
+        skView.presentScene(scene)
+        
+        setupLayout()
+
     }
     
+    lazy var pauseButton: UIButton  = {
+        let pauseButton = MinimalButtonComponent(text: "Pause", img: "Lotus").button
+        pauseButton.addTarget(self, action: #selector(pausedButton), for: .touchDown)
+        return pauseButton
+    }()
+    
+    var pauseView: PauseView = {
+        var pauseView = PauseView()
+        pauseView.layer.zPosition = 10
+        return pauseView
+    }()
+    
+    func setupLayout() {
+        pauseButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pauseButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -44),
+            pauseButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 44)
+        ])
+        
+        pauseView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pauseView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            pauseView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            pauseView.widthAnchor.constraint(equalToConstant: 200),
+            pauseView.heightAnchor.constraint(equalToConstant: 400)
+        ])
+    }
+    
+    
+    @objc func pausedButton() {
+        viewModel.didPause()
+        print(viewModel.gameInfo.isPaused)
+    }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    func presentPauseScene() {
-        let transitionFadeLength = 0.30
-        let transitionFadeColor = UIColor.white
-        let pauseTransition = SKTransition.fade(with: transitionFadeColor, duration: transitionFadeLength)
-        pauseTransition.pausesOutgoingScene = true
 
-        let currentSKView = view as! SKView
-        currentSKView.presentScene(pauseScene!, transition: pauseTransition)
+}
+
+extension GameViewController: PauseDelegate {
+    func pauseStateChanged(newValue value: Bool) {
+        gameScene?.view?.isPaused.toggle()
+        pauseView.isHidden.toggle()
     }
     
-    func unpauseGame() {
-      let transitionFadeLength = 0.30
-      let transitionFadeColor = UIColor.white
-      let unpauseTransition = SKTransition.fade(with: transitionFadeColor, duration: transitionFadeLength)
-      unpauseTransition.pausesIncomingScene = false
-
-      let currentSKView = view as! SKView
-      currentSKView.presentScene(gameScene!, transition: unpauseTransition)
-    }
-
 }
