@@ -11,7 +11,7 @@ import SpriteKit
 extension GameScene {
     // MARK: hero setup
     func setupHero() {
-        let hero = SKSpriteNode(imageNamed: "Tengu")
+        let hero = SKSpriteNode(imageNamed: (player?.selectedSkin!)!)
         hero.name = "Hero"
         hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         hero.size = CGSize(width: (self.scene?.size.width)!*0.14, height: ((self.scene?.size.height)!*0.42))
@@ -35,5 +35,9 @@ extension GameScene {
     func jump(withImpulse impulse: CGFloat) {
         heroNode.physicsBody?.applyImpulse(CGVector(dx: 0, dy: impulse))
 
+    }
+    
+    func receiveDamage() {
+//        heroNode.texture = SKTexture(imageNamed: heroNode.normalTexture.im)
     }
 }

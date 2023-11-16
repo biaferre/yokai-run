@@ -37,11 +37,11 @@ extension GameScene {
     // MARK: skin update
 
     func touchDown(atPoint pos: CGPoint) {
-        heroNode.texture = SKTexture(imageNamed: "Tengu")
+        //heroNode.texture = SKTexture(imageNamed: "Tengu")
     }
     
     func touchUp(atPoint pos: CGPoint) {
-        heroNode.texture = SKTexture(imageNamed: "Tengu")
+        //heroNode.texture = SKTexture(imageNamed: "Tengu")
     }
     
 }

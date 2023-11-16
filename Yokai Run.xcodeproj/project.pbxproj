@@ -20,7 +20,6 @@
 		D41BC7242AFD6B4500263E83 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7232AFD6B4500263E83 /* Game.swift */; };
 		D41BC7262AFD6E0F00263E83 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7252AFD6E0F00263E83 /* GameViewModel.swift */; };
 		D41BC7282AFD6E2C00263E83 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7272AFD6E2C00263E83 /* Hero.swift */; };
-		D41BC72A2AFD6E3B00263E83 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7292AFD6E3B00263E83 /* Player.swift */; };
 		D41BC72C2AFD6EAB00263E83 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC72B2AFD6EAB00263E83 /* Skin.swift */; };
 		D41BC7312AFE865700263E83 /* GameCollisionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41BC7302AFE865700263E83 /* GameCollisionDelegate.swift */; };
 		D466F6DD2AF92C99004AC986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F6DC2AF92C99004AC986 /* AppDelegate.swift */; };
@@ -45,6 +44,7 @@
 		D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */; };
 		D4FEF8452B065EAF007F95B2 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8442B065EAF007F95B2 /* GameOverView.swift */; };
 		D4FEF8472B06837A007F95B2 /* GameScene+Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8462B06837A007F95B2 /* GameScene+Platforms.swift */; };
+		D4FEF84A2B069371007F95B2 /* YokaiDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8482B069371007F95B2 /* YokaiDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,6 @@
 		D41BC7232AFD6B4500263E83 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		D41BC7252AFD6E0F00263E83 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		D41BC7272AFD6E2C00263E83 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
-		D41BC7292AFD6E3B00263E83 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D41BC72B2AFD6EAB00263E83 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
 		D41BC7302AFE865700263E83 /* GameCollisionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollisionDelegate.swift; sourceTree = "<group>"; };
 		D466F6D92AF92C99004AC986 /* Yokai Run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yokai Run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +104,7 @@
 		D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Obstacles.swift"; sourceTree = "<group>"; };
 		D4FEF8442B065EAF007F95B2 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		D4FEF8462B06837A007F95B2 /* GameScene+Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Platforms.swift"; sourceTree = "<group>"; };
+		D4FEF8492B069371007F95B2 /* YokaiDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YokaiDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				D413544D2AFEC10900FD0A01 /* ColliderTypes.swift */,
-				D41BC7292AFD6E3B00263E83 /* Player.swift */,
 				D41BC72B2AFD6EAB00263E83 /* Skin.swift */,
 				D41BC7232AFD6B4500263E83 /* Game.swift */,
 				D41BC7272AFD6E2C00263E83 /* Hero.swift */,
@@ -219,6 +218,7 @@
 				D466F6DC2AF92C99004AC986 /* AppDelegate.swift */,
 				D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */,
 				D466F6ED2AF92C9A004AC986 /* Info.plist */,
+				D4FEF8482B069371007F95B2 /* YokaiDataModel.xcdatamodeld */,
 			);
 			path = "Yokai Run";
 			sourceTree = "<group>";
@@ -459,12 +459,12 @@
 				D466F6DD2AF92C99004AC986 /* AppDelegate.swift in Sources */,
 				D466F6DF2AF92C99004AC986 /* SceneDelegate.swift in Sources */,
 				D41BC7172AFC1A6B00263E83 /* ArchiveViewController.swift in Sources */,
-				D41BC72A2AFD6E3B00263E83 /* Player.swift in Sources */,
 				D41BC7282AFD6E2C00263E83 /* Hero.swift in Sources */,
 				D4FEF8332B02989D007F95B2 /* GameScene+Touches.swift in Sources */,
 				D41BC70A2AFC13DD00263E83 /* ArchiveView.swift in Sources */,
 				D4FEF8472B06837A007F95B2 /* GameScene+Platforms.swift in Sources */,
 				D466F71D2AFAAF61004AC986 /* MainButtonComponent.swift in Sources */,
+				D4FEF84A2B069371007F95B2 /* YokaiDataModel.xcdatamodeld in Sources */,
 				D41BC70C2AFC142800263E83 /* CreditView.swift in Sources */,
 				D41BC72C2AFD6EAB00263E83 /* Skin.swift in Sources */,
 				D4FEF83D2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift in Sources */,
@@ -785,6 +785,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4FEF8482B069371007F95B2 /* YokaiDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4FEF8492B069371007F95B2 /* YokaiDataModel.xcdatamodel */,
+			);
+			currentVersion = D4FEF8492B069371007F95B2 /* YokaiDataModel.xcdatamodel */;
+			path = YokaiDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D466F6D12AF92C98004AC986 /* Project object */;
 }

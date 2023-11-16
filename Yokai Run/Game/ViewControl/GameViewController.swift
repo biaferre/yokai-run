@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
         
         let skView = SKView(frame: view.frame)
         
-        let scene = GameScene(size: skView.bounds.size, gameInfo: viewModel.gameInfo)
+        let scene = GameScene.shared
         scene.scaleMode = .aspectFill
         
         gameScene = scene
