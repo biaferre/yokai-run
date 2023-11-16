@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class GameViewModel: ObservableObject {
+
     @Published var gameInfo: Game
     
     private var cancellables: Set<AnyCancellable> = []
@@ -17,7 +18,7 @@ class GameViewModel: ObservableObject {
         self.gameInfo = Game(heroSkin: "Tengu", // later implement switching with selection
                              heroInitialY: -60,
                              heroCurrentY: -60,
-                             stamina: 10.0,
+                             stamina: 100.0,
                              isImmune: false,
                                miles: 0,
                                inCounter: false,

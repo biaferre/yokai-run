@@ -78,8 +78,8 @@ class MenuView: UIView {
         
     }()
     
-    lazy var creditsButton: UIButton = {
-        var button = MainButtonComponent(type: .primary, title: "Credits").button
+    lazy var onboardingButton: UIButton = {
+        var button = MainButtonComponent(type: .primary, title: "How to Play").button
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
         
@@ -96,7 +96,7 @@ class MenuView: UIView {
     
     // --MARK: main stacks and containers
     lazy var buttonStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [startButton, archiveButton, creditsButton])
+        let stack = UIStackView(arrangedSubviews: [startButton, archiveButton, onboardingButton])
         stack.axis = .vertical
         stack.spacing = 20.0
         stack.alignment = .fill

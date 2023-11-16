@@ -43,6 +43,8 @@
 		D4FEF83B2B02A773007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
 		D4FEF83D2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83C2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift */; };
 		D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */; };
+		D4FEF8452B065EAF007F95B2 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8442B065EAF007F95B2 /* GameOverView.swift */; };
+		D4FEF8472B06837A007F95B2 /* GameScene+Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8462B06837A007F95B2 /* GameScene+Platforms.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GUI.swift"; sourceTree = "<group>"; };
 		D4FEF83C2B03E5E4007F95B2 /* GameViewController+GameCycleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+GameCycleDelegate.swift"; sourceTree = "<group>"; };
 		D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Obstacles.swift"; sourceTree = "<group>"; };
+		D4FEF8442B065EAF007F95B2 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		D4FEF8462B06837A007F95B2 /* GameScene+Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Platforms.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				D413544F2AFEC2A000FD0A01 /* PauseView.swift */,
+				D4FEF8442B065EAF007F95B2 /* GameOverView.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */,
 				D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */,
 				D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */,
+				D4FEF8462B06837A007F95B2 /* GameScene+Platforms.swift */,
 				D4FEF8402B03EF41007F95B2 /* Delegates */,
 				D4FEF8412B03EF4C007F95B2 /* ViewControl */,
 			);
@@ -442,6 +448,7 @@
 				D41BC7312AFE865700263E83 /* GameCollisionDelegate.swift in Sources */,
 				D41BC7132AFC1A2C00263E83 /* MenuViewModel.swift in Sources */,
 				D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */,
+				D4FEF8452B065EAF007F95B2 /* GameOverView.swift in Sources */,
 				D41BC7242AFD6B4500263E83 /* Game.swift in Sources */,
 				D41BC71B2AFC219800263E83 /* GameViewController.swift in Sources */,
 				D4FEF8352B029962007F95B2 /* GameScene+Hero.swift in Sources */,
@@ -456,6 +463,7 @@
 				D41BC7282AFD6E2C00263E83 /* Hero.swift in Sources */,
 				D4FEF8332B02989D007F95B2 /* GameScene+Touches.swift in Sources */,
 				D41BC70A2AFC13DD00263E83 /* ArchiveView.swift in Sources */,
+				D4FEF8472B06837A007F95B2 /* GameScene+Platforms.swift in Sources */,
 				D466F71D2AFAAF61004AC986 /* MainButtonComponent.swift in Sources */,
 				D41BC70C2AFC142800263E83 /* CreditView.swift in Sources */,
 				D41BC72C2AFD6EAB00263E83 /* Skin.swift in Sources */,

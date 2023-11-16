@@ -21,7 +21,7 @@ extension GameScene {
                 
                 if self.isJumping {
                     self.isDoubleJumping = true
-                    jump(withImpulse: 280)
+                    jump(withImpulse: 320)
                 }
                 else {
                     self.isJumping = true

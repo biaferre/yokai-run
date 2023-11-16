@@ -10,6 +10,10 @@ import SpriteKit
 
 extension GameScene: SKPhysicsContactDelegate {
     
+    func absorbObstacle(obstacle: SKSpriteNode) {
+        obstacle.removeFromParent()
+    }
+    
     struct ColliderType {
         static let HERO: UInt32 = 1
         static let ONGROUND: UInt32 = 2
@@ -26,6 +30,7 @@ extension GameScene: SKPhysicsContactDelegate {
             isDoubleJumping = false
         }
         else if collision == ColliderType.HERO | ColliderType.OBSTACLE {
+            absorbObstacle(obstacle: contact.bodyB.node as! SKSpriteNode)
             gameInfo.stamina -= 5
         }
         else if collision == ColliderType.HERO | ColliderType.PLATFORM {

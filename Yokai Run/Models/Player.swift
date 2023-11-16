@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import CoreData
 
-struct Player {
-    var record: Int
-    var skins: [Skin]
+class Player: NSManagedObject {
+    @NSManaged var record: Int
+    @NSManaged var skins: [Skin]
 }

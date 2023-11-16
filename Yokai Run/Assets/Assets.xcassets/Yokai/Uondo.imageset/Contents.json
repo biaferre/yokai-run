@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ofuda.png",
+      "filename" : "uondo_right.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ofuda@2x.png",
+      "filename" : "uondo_right@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ofuda@3x.png",
+      "filename" : "uondo_right@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

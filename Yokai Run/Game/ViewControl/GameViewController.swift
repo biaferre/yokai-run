@@ -53,9 +53,10 @@ class GameViewController: UIViewController {
         return pauseButton
     }()
     
-    var gameOverView: UIImageView = {
-        let image = UIImage(named: "Obstacle")
-        return UIImageView(image: image)
+    var gameOverView: UIView = {
+        var gameOverView = GameOverView()
+        gameOverView.layer.zPosition = 10
+        return gameOverView
     }()
     
     var pauseView: PauseView = {

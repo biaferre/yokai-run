@@ -33,7 +33,9 @@ class PauseView: UIView {
     }
     
     @objc func resumeAction() {
-        gameViewModel?.didPause()
+        if ((gameViewModel?.gameInfo.isDead) == false) {
+            gameViewModel?.didPause()
+        }
     }
     
     @objc func restartAction() {
@@ -41,44 +43,10 @@ class PauseView: UIView {
         //gameViewModel?.didPause()
     }
     
-//    init(gameScene: GameScene) {
-//        super.init(frame: .zero)
-//
-//        self.gameScene = gameScene
-//    }
-//
-//    // --MARK: setup
-//    func setupContent() {
-//        self.addSubview(titleStack)
-//        self.addSubview(buttonStack)
-//    }
-//
-//    func setupLayout() {
-//        self.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            self.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            self.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-//        ])
-//    }
-//
-//    // --MARK: title and image
-//
-//    lazy var title: UILabel = {
-//        let label = UILabel()
-//        label.text = "Pause"
-//        label.font = UIFont(name: "Neo-Tech", size: 24)
-//        return label
-//    }()
-//
-//    lazy var image = UIImage(named: "Lotus")
-//
-//    lazy var titleStack: UIStackView = {
-//        var stack = UIStackView(arrangedSubviews: [title, UIImageView(image: image)])
-//        stack.axis = .vertical
-//        return stack
-//    }()
-//
-//
+    @objc func menuAction() {
+        
+    }
+    
     // --MARK: buttons
 
     func setupButtons() {
@@ -109,4 +77,11 @@ class PauseView: UIView {
         return button
 
     }()
+    
+    var homeButton: UIButton = {
+         var button = MainButtonComponent(type: .secondary, title: "Back To Menu").button
+         button.addTarget(self, action: #selector(menuAction), for: .touchUpInside)
+         return button
+
+     }()
 }

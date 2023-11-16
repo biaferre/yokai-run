@@ -19,9 +19,8 @@ extension GameScene {
         
         hero.physicsBody = SKPhysicsBody(rectangleOf: hero.size)
         hero.physicsBody?.isDynamic = true
-        
         hero.physicsBody?.categoryBitMask = 1
-        hero.physicsBody?.contactTestBitMask = 2 | 4
+        hero.physicsBody?.contactTestBitMask = 2 | 4 | 8 | 16
         
         hero.physicsBody?.restitution = 0.0
         

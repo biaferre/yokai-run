@@ -9,7 +9,6 @@ import Foundation
 
 class Game: ObservableObject {
     weak var cycleDelegate: GameCycleDelegate?
-
     
     @Published var heroSkin: String
     

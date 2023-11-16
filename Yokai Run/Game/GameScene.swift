@@ -14,12 +14,14 @@ class GameScene: SKScene {
     var isDoubleJumping: Bool = false
     
     var obstacleNodes = [SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle")]
+    var platformNodes = [SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform")]
     
     var heroNode = SKSpriteNode()
     var gameInfo: Game
     
     
-    // MARK: inits functions
+    
+    // MARK: inits
 
     init(size: CGSize, gameInfo: Game) {
         self.gameInfo = gameInfo
@@ -31,6 +33,7 @@ class GameScene: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     
     // MARK: basic functions
@@ -49,11 +52,16 @@ class GameScene: SKScene {
         setupGrounds()
         setupHero()
         setupObstacles()
+        setupPlatforms()
         setupGUI()
     }
     
     override func update(_ currentTime: TimeInterval) {
+        if heroNode.position.x <= -((self.scene?.size.width)!/2 + heroNode.size.width) {
+            gameInfo.stamina = 0
+        }
         moveGrounds()
         moveObstacles()
+        movePlatforms()
     }
 }
