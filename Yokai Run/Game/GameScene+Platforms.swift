@@ -9,12 +9,11 @@ import Foundation
 import SpriteKit
 
 extension GameScene {
+    
     func setupPlatforms() {
         
-        let platformPositions: [CGPoint] = [
-            CGPoint(x: 100, y: -20),
-            CGPoint(x: 600, y: 35),
-        ]
+        let platformPositions = GameComponentPlacement().platformNodes
+
         
         for i in 0...(platformNodes.count - 1) {
             let platformArea: SKSpriteNode = SKSpriteNode(color: .clear, size:
@@ -41,11 +40,11 @@ extension GameScene {
         
     }
     
-    func movePlatforms() {
+    func movePlatforms(acceleration: CGFloat) {
         for i in 0...(platformNodes.count - 1) {
-            platformNodes[i].position.x -= 2
+            platformNodes[i].position.x -= 2*acceleration
             
-            if platformNodes[i].position.x <= -((self.scene?.size.width)!)/2 {
+            if platformNodes[i].position.x <= -((self.scene?.size.width)!) {
                 platformNodes[i].removeFromParent()
             }
         }

@@ -7,27 +7,30 @@
 
 import Foundation
 
-extension GameViewController: GameCycleDelegate {
+extension GameViewController: CycleDelegate {
     
     func pauseStateChanged(newValue value: Bool) {
-        gameScene?.view?.isPaused.toggle()
         pauseView.isHidden.toggle()
-        print(pauseView.isHidden)
+        gameScene?.view?.isPaused.toggle()
+    }
+    
+    func appHasReturned() {
+        gameScene?.view?.isPaused.toggle()
+        pauseView.isHidden = false
     }
     
     func checkIfDead() {
-        print("levei um hit")
-        if (gameScene?.gameInfo.stamina)! <= 0 {
+        if (gameScene?.viewModel.gameInfo.stamina)! <= 0 {
             gameScene?.view?.isPaused.toggle()
 
-            gameScene?.gameInfo.isDead = true
+            gameScene?.viewModel.gameInfo.isDead = true
             gameOverView.isHidden = false
         }
     }
     
 }
 
-protocol GameCycleDelegate: AnyObject {
+protocol CycleDelegate: AnyObject {
     func pauseStateChanged(newValue value: Bool)
     
     func checkIfDead()

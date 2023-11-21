@@ -9,22 +9,37 @@ import Foundation
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UISceneDelegate {
     
     var viewModel = GameViewModel()
     var gameScene: GameScene?
     
     override func viewDidLoad() {
-            super.viewDidLoad()
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(pauseGame),
+            name: UIApplication.didEnterBackgroundNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(resumeGame),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
         
         viewModel.gameInfo.cycleDelegate = self
+        
             
         // MARK: scene configurations
         
         let skView = SKView(frame: view.frame)
         
         let scene = GameScene.shared
-        scene.scaleMode = .aspectFill
+        scene.passViewModel(viewModel: viewModel)
         
         gameScene = scene
                 
@@ -33,23 +48,21 @@ class GameViewController: UIViewController {
         
         pauseView.addViewModel(gameViewModel: viewModel)
         
-        pauseView.isHidden = true
+        pauseView.isHidden = !viewModel.gameInfo.isPaused
         gameOverView.isHidden = true
-
-        print(pauseView.anchorPoint)
 
         skView.addSubview(pauseView)
         skView.addSubview(gameOverView)
 
-        skView.presentScene(scene)
+        skView.presentScene(gameScene)
         
         setupLayout()
 
     }
-    
+
     lazy var pauseButton: UIButton  = {
         let pauseButton = MinimalButtonComponent(text: "Pause", img: "Lotus").button
-        pauseButton.addTarget(self, action: #selector(pausedButton), for: .touchDown)
+        pauseButton.addTarget(self, action: #selector(pauseGame), for: .touchDown)
         return pauseButton
     }()
     
@@ -90,14 +103,21 @@ class GameViewController: UIViewController {
         ])
     }
     
-    
-    @objc func pausedButton() {
+    @objc func pauseGame() {
         viewModel.didPause()
+    }
+    
+    @objc func resumeGame() {
+        appHasReturned()
     }
     
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
 

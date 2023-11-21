@@ -8,7 +8,7 @@
 import Foundation
 
 class Game: ObservableObject {
-    weak var cycleDelegate: GameCycleDelegate?
+    weak var cycleDelegate: CycleDelegate?
     
     @Published var heroSkin: String
     
@@ -25,6 +25,8 @@ class Game: ObservableObject {
     
     @Published var miles: Int
     
+    @Published var acceleration: CGFloat
+    
     @Published var inCounter: Bool
     @Published var isPaused: Bool {
         didSet {
@@ -34,13 +36,14 @@ class Game: ObservableObject {
     
     @Published var isDead: Bool
         
-    init(heroSkin: String, heroInitialY: CGFloat, heroCurrentY: CGFloat, stamina: CGFloat, isImmune: Bool, miles: Int, inCounter: Bool, isPaused: Bool, isDead: Bool) {
+    init(heroSkin: String, heroInitialY: CGFloat, heroCurrentY: CGFloat, stamina: CGFloat, isImmune: Bool, miles: Int, acceleration: CGFloat, inCounter: Bool, isPaused: Bool, isDead: Bool) {
         self.heroSkin = heroSkin
         self.heroInitialY = heroInitialY
         self.heroCurrentY = heroCurrentY
         self.stamina = stamina
         self.isImmune = isImmune
         self.miles = miles
+        self.acceleration = acceleration
         self.inCounter = inCounter
         self.isPaused = isPaused
         self.isDead = isDead

@@ -11,7 +11,8 @@ import SpriteKit
 extension GameScene: SKPhysicsContactDelegate {
     
     func absorbObstacle(obstacle: SKSpriteNode) {
-        obstacle.removeFromParent()
+        obstacle.physicsBody = nil
+        //obstacle.removeFromParent()
     }
     
     struct ColliderType {
@@ -30,13 +31,13 @@ extension GameScene: SKPhysicsContactDelegate {
             isDoubleJumping = false
         }
         else if collision == ColliderType.HERO | ColliderType.OBSTACLE {
+            print("colidi")
             absorbObstacle(obstacle: contact.bodyB.node as! SKSpriteNode)
-            gameInfo.stamina -= 5
+           // GameViewModel.shared.
         }
         else if collision == ColliderType.HERO | ColliderType.PLATFORM {
             isJumping = false
             isDoubleJumping = false
-            print("plataforma")
         }
     }
 

@@ -28,11 +28,11 @@ extension GameScene {
         }
     }
     
-    func moveGrounds() {
+    func moveGrounds(acceleration: CGFloat) {
         self.enumerateChildNodes(withName: "Ground", using: ({
             (node, error) in
             
-            node.position.x -= 2
+            node.position.x -= 2*acceleration
             
             if node.position.x < -((self.scene?.size.width)!) {
                 node.position.x += (self.scene?.size.width)! * 3

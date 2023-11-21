@@ -1,16 +1,17 @@
 //
-//  GameScene+Obstacles.swift
+//  GameScene+Collectibles.swift
 //  Yokai Run
 //
-//  Created by Bof on 14/11/23.
+//  Created by Bof on 21/11/23.
 //
 
 import Foundation
 import SpriteKit
 
+
 extension GameScene {
     
-    func setupObstacles() {
+    func setupCollectibles() {
         
         let obstaclePositions = GameComponentPlacement().obstacleNodes
         
@@ -32,7 +33,7 @@ extension GameScene {
         }
     }
     
-    func moveObstacles(acceleration: CGFloat) {
+    func moveCollectibles(acceleration: CGFloat) {
         for i in 0...(obstacleNodes.count - 1) {
             obstacleNodes[i].position.x -= 2*acceleration
             
@@ -41,4 +42,5 @@ extension GameScene {
             }
         }
     }
+    
 }

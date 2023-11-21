@@ -22,6 +22,8 @@ extension GameScene {
         hero.physicsBody?.categoryBitMask = 1
         hero.physicsBody?.contactTestBitMask = 2 | 4 | 8 | 16
         
+        hero.zPosition = 10
+        
         hero.physicsBody?.restitution = 0.0
         
         let uprightConstraint = SKConstraint.zRotation(SKRange(constantValue: 0.0))

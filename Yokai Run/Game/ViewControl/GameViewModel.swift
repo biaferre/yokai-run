@@ -20,10 +20,11 @@ class GameViewModel: ObservableObject {
                              heroCurrentY: -60,
                              stamina: 100.0,
                              isImmune: false,
-                               miles: 0,
-                               inCounter: false,
-                               isPaused: false,
-                               isDead: false)
+                             miles: 0,
+                             acceleration: 1,
+                             inCounter: false,
+                             isPaused: false,
+                             isDead: false)
         gameInfo.objectWillChange.sink {
             [weak self] in self?.objectWillChange.send()
         }.store(in: &cancellables)

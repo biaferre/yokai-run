@@ -10,7 +10,9 @@ import CoreData
 
 class GameScene: SKScene {
     
-    static var shared = GameScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), gameInfo: GameViewModel().gameInfo)
+    static var shared: GameScene {
+        return GameScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), viewModel: GameViewModel())
+    }
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var groundNodes: [SKSpriteNode] = []
@@ -19,17 +21,18 @@ class GameScene: SKScene {
     var isDoubleJumping: Bool = false
     
     var obstacleNodes = [SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle")]
-    var platformNodes = [SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform")]
+    var platformNodes = [SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform")]
     
     var heroNode = SKSpriteNode()
-    var gameInfo: Game
+    var viewModel: GameViewModel
     
     var player: Player?
+
     
     // MARK: inits
 
-    private init(size: CGSize, gameInfo: Game) {
-        self.gameInfo = gameInfo
+    private init(size: CGSize, viewModel: GameViewModel) {
+        self.viewModel = viewModel
                 
         super.init(size: size)
 
@@ -39,19 +42,10 @@ class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-
-    
-//    func loadPlayerInfo() {
-//
-//        let player = NSEntityDescription.insertNewObject(forEntityName: "Player", into: context) as! Player
-//        self.player = player
-//    }
-    
     
     // MARK: basic functions
 
     override func didMove(to: SKView) {
-        GameScene.shared = self
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -15.8)
@@ -69,15 +63,30 @@ class GameScene: SKScene {
         setupPlatforms()
         setupGUI()
     }
+
+
     
     override func update(_ currentTime: TimeInterval) {
-        if heroNode.position.x <= -((self.scene?.size.width)!/2 + heroNode.size.width) {
-            gameInfo.stamina = 0
+        // gradually accelerates game up to a limit
+        if self.viewModel.gameInfo.acceleration <= 4 {
+            self.viewModel.gameInfo.acceleration += 0.0001
         }
-        moveGrounds()
-        moveObstacles()
-        movePlatforms()
+        
+        // hero dies if its left behind
+        if heroNode.position.x <= -((self.scene?.size.width)!/2 + heroNode.size.width) {
+            self.viewModel.gameInfo.stamina = 0
+        }
+        
+        // update components' positions
+        moveGrounds(acceleration: viewModel.gameInfo.acceleration)
+        moveObstacles(acceleration: viewModel.gameInfo.acceleration)
+        movePlatforms(acceleration: viewModel.gameInfo.acceleration)
     }
+    
+    func passViewModel(viewModel: GameViewModel) {
+        self.viewModel = viewModel
+    }
+    
 
     func fetchPlayerData() {
         let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
@@ -101,4 +110,5 @@ class GameScene: SKScene {
             print("Failed to fetch player: \(error)")
         }
     }
+    
 }

@@ -32,7 +32,6 @@ class MenuViewController: UIViewController, NavigationDelegate {
             navigationController?.pushViewController(CreditViewController(), animated: true)
         }
         else if to == "Start" {
-            print("start")
             navigationController?.isNavigationBarHidden = true
             navigationController?.pushViewController(GameViewController(), animated: true)
             
