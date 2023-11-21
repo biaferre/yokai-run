@@ -6,65 +6,55 @@
 //
 
 import Foundation
+import UIKit
 
-struct Skin {
-    var summonerInfo: [String: Any] = [
-        "name": "Summoner",
-        "jpName": "召喚",
-        "skinDescription": "",
-        "powers": ["Summoning Yokai", "Sorcery"],
-        "type": "Human",
-        "imgNamed": "Basic"
-    ]
+class Skin: NSObject, NSCoding {
     
-    var tenguInfo: [String: Any] = [
-        "name": "Uondo",
-        "jpName": "天狗",
-        "skinDescription": "",
-        "powers": [""],
-        "type": "Tengu (goblin-like)",
-        "imgNamed": "Tengu"
-    ]
+    var name: String
+    var jpName: String
+    var skinDescription: String
+    var powers: [String]
+    var type: String
+    var imgNamed: String
+    var isEnabled: Bool
     
-    var uondoInfo: [String: Any] = [
-        "name": "Uondo",
-        "jpName": "魚人",
-        "skinDescription": "Uondo is the daughter of a carp. She inherited the good looks of both of her parents, and is famous for her beautiful face.It is said that licking her skin adds years to ones’ life.",
-        "powers": ["Water-dwelling","Rejuvenation"],
-        "type": "Ningyo (mermaid-like)",
-        "imgNamed": "Uondo"
-    ]
-    
-    var gashadokuroInfo: [String: Any] = [
-        "name": "Gashadokuro",
-        "jpName": "がしゃどくろ",
-        "skinDescription": "Made of the bones and the resentment of those buried without ceremony, a Gashadokuro is a gigantic skeleton whose rattling noises terrify anyone unlucky enough to hear th",
-        "powers": ["Immortality", "Super strength"],
-        "type": "Also known as Odokuro",
-        "imgNamed": "Gashadokuro"
-    ]
-    
-    func getSkinFromName(name: String) -> [String: Any] {
-        var info: [String: Any] = [:]
-        
-        if name == "Summoner" {
-            info = summonerInfo
-        }
-        else if name == "Tengu" {
-            info = tenguInfo
-        }
-        else if name == "Uondo" {
-            info = uondoInfo
-        }
-        else if name == "Gashadokuro" {
-            info = gashadokuroInfo
-        }
-        else {
-            print("Error: unexistant skin name")
-        }
-        
-        return info
-        
+    init(name: String, jpName: String, skinDescription: String, powers: [String], type: String, imgNamed: String, isEnabled: Bool) {
+        self.name = name
+        self.jpName = jpName
+        self.skinDescription = skinDescription
+        self.powers = powers
+        self.type = type
+        self.imgNamed = imgNamed
+        self.isEnabled = isEnabled
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: "name") as? String ?? ""
+        jpName = aDecoder.decodeObject(forKey: "jpName") as? String ?? ""
+        skinDescription = aDecoder.decodeObject(forKey: "skinDescription") as? String ?? ""
+        powers = aDecoder.decodeObject(forKey: "powers") as? [String] ?? [""]
+        type = aDecoder.decodeObject(forKey: "type") as? String ?? ""
+        imgNamed = aDecoder.decodeObject(forKey: "imgNamed") as? String ?? ""
+        isEnabled = aDecoder.decodeObject(forKey: "isEnabled") as? Bool ?? false
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(jpName, forKey: "jpName")
+        coder.encode(skinDescription, forKey: "skinDescription")
+        coder.encode(powers, forKey: "powers")
+        coder.encode(type, forKey: "type")
+        coder.encode(imgNamed, forKey: "imgNamed")
+        coder.encode(isEnabled, forKey: "isEnabled")
+
+    }
+    
+    static func encodeSkins(_ skins: [Skin]) -> Data? {
+        return try? NSKeyedArchiver.archivedData(withRootObject: skins, requiringSecureCoding: false)
+    }
+
+    static func decodeSkins(from data: Data) -> [Skin]? {
+        return try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Skin]
+    }
+
 }

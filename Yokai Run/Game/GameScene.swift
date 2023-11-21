@@ -26,9 +26,6 @@ class GameScene: SKScene {
     
     var heroNode = SKSpriteNode()
     var viewModel: GameViewModel
-    
-    var skinData = Skin()
-    
 
     
     // MARK: inits
