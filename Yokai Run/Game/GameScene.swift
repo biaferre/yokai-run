@@ -14,7 +14,8 @@ class GameScene: SKScene {
         return GameScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), viewModel: GameViewModel())
     }
     
-    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let userDefaultsManager = UserDefaultsManager.shared
+    
     var groundNodes: [SKSpriteNode] = []
     
     var isJumping: Bool = false
@@ -26,7 +27,8 @@ class GameScene: SKScene {
     var heroNode = SKSpriteNode()
     var viewModel: GameViewModel
     
-    var player: Player?
+    var skinData = Skin()
+    
 
     
     // MARK: inits
@@ -55,7 +57,7 @@ class GameScene: SKScene {
         
         isUserInteractionEnabled = true
 
-        fetchPlayerData()
+//        fetchPlayerData()
         
         setupGrounds()
         setupHero()
@@ -88,27 +90,27 @@ class GameScene: SKScene {
     }
     
 
-    func fetchPlayerData() {
-        let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
-        do {
-            if let player = try context.fetch(fetchRequest).first {
-                self.player = player
-            } else {
-                player = Player(context: context)
-                let skin = Skin(context: context)
-                skin.owned = player
-                
-                do {
-                    try context.save()
-                }
-                catch {
-                    print("Failed to save player: \(error)")
-                }
-
-            }
-        } catch {
-            print("Failed to fetch player: \(error)")
-        }
-    }
+//    func fetchPlayerData() {
+//        let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
+//        do {
+//            if let player = try context.fetch(fetchRequest).first {
+//                self.player = player
+//            } else {
+//                player = Player(context: context)
+//                let skin = Skin(context: context)
+//                skin.owned = player
+//                
+//                do {
+//                    try context.save()
+//                }
+//                catch {
+//                    print("Failed to save player: \(error)")
+//                }
+//
+//            }
+//        } catch {
+//            print("Failed to fetch player: \(error)")
+//        }
+//    }
     
 }

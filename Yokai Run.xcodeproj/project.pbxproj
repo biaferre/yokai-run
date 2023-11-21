@@ -33,8 +33,7 @@
 		D466F71D2AFAAF61004AC986 /* MainButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D466F71C2AFAAF61004AC986 /* MainButtonComponent.swift */; };
 		D467972B2B0D2B6F00BAD8C4 /* GameComponentPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467972A2B0D2B6F00BAD8C4 /* GameComponentPlacement.swift */; };
 		D467972D2B0D2C5F00BAD8C4 /* GameScene+Collectibles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467972C2B0D2C5F00BAD8C4 /* GameScene+Collectibles.swift */; };
-		D46797332B0D2DED00BAD8C4 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46797322B0D2DED00BAD8C4 /* Hero.swift */; };
-		D46797382B0D2E7800BAD8C4 /* YokaiDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D46797342B0D2E7700BAD8C4 /* YokaiDataModel.xcdatamodeld */; };
+		D467973D2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467973C2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift */; };
 		D4FEF82F2B0250AC007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
 		D4FEF8312B02515D007F95B2 /* MinimalButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */; };
 		D4FEF8332B02989D007F95B2 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */; };
@@ -97,8 +96,7 @@
 		D466F71C2AFAAF61004AC986 /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonComponent.swift; sourceTree = "<group>"; };
 		D467972A2B0D2B6F00BAD8C4 /* GameComponentPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameComponentPlacement.swift; sourceTree = "<group>"; };
 		D467972C2B0D2C5F00BAD8C4 /* GameScene+Collectibles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Collectibles.swift"; sourceTree = "<group>"; };
-		D46797322B0D2DED00BAD8C4 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = ../../../../.Trash/Hero.swift; sourceTree = "<group>"; };
-		D46797352B0D2E7700BAD8C4 /* YokaiDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YokaiDataModel.xcdatamodel; sourceTree = "<group>"; };
+		D467973C2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neo-Tech.otf"; sourceTree = "<group>"; };
 		D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalButtonComponent.swift; sourceTree = "<group>"; };
 		D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				D413544D2AFEC10900FD0A01 /* ColliderTypes.swift */,
 				D41BC72B2AFD6EAB00263E83 /* Skin.swift */,
 				D41BC7232AFD6B4500263E83 /* Game.swift */,
-				D46797322B0D2DED00BAD8C4 /* Hero.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +212,7 @@
 		D466F6DB2AF92C99004AC986 /* Yokai Run */ = {
 			isa = PBXGroup;
 			children = (
+				D467973C2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift */,
 				D4FEF82B2B024D54007F95B2 /* Assets */,
 				D41BC7202AFD5F6400263E83 /* Game */,
 				D466F7132AFA9689004AC986 /* Views */,
@@ -224,7 +222,6 @@
 				D466F6DC2AF92C99004AC986 /* AppDelegate.swift */,
 				D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */,
 				D466F6ED2AF92C9A004AC986 /* Info.plist */,
-				D46797342B0D2E7700BAD8C4 /* YokaiDataModel.xcdatamodeld */,
 			);
 			path = "Yokai Run";
 			sourceTree = "<group>";
@@ -446,6 +443,7 @@
 			files = (
 				D41BC7222AFD5F8100263E83 /* GameScene.swift in Sources */,
 				D4FEF8372B029993007F95B2 /* GameScene+Grounds.swift in Sources */,
+				D467973D2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift in Sources */,
 				D466F7122AFA9685004AC986 /* MenuView.swift in Sources */,
 				D466F71B2AFAABC5004AC986 /* ButtonType.swift in Sources */,
 				D4FEF8392B029A91007F95B2 /* GameScene+GUI.swift in Sources */,
@@ -461,12 +459,10 @@
 				D4FEF8352B029962007F95B2 /* GameScene+Hero.swift in Sources */,
 				D413544E2AFEC10900FD0A01 /* ColliderTypes.swift in Sources */,
 				D41BC70F2AFC152D00263E83 /* UIView+FindViewController.swift in Sources */,
-				D46797332B0D2DED00BAD8C4 /* Hero.swift in Sources */,
 				D41354502AFEC2A000FD0A01 /* PauseView.swift in Sources */,
 				D4FEF8312B02515D007F95B2 /* MinimalButtonComponent.swift in Sources */,
 				D466F6DD2AF92C99004AC986 /* AppDelegate.swift in Sources */,
 				D466F6DF2AF92C99004AC986 /* SceneDelegate.swift in Sources */,
-				D46797382B0D2E7800BAD8C4 /* YokaiDataModel.xcdatamodeld in Sources */,
 				D41BC7172AFC1A6B00263E83 /* ArchiveViewController.swift in Sources */,
 				D4FEF8332B02989D007F95B2 /* GameScene+Touches.swift in Sources */,
 				D41BC70A2AFC13DD00263E83 /* ArchiveView.swift in Sources */,
@@ -793,20 +789,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D46797342B0D2E7700BAD8C4 /* YokaiDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D46797352B0D2E7700BAD8C4 /* YokaiDataModel.xcdatamodel */,
-			);
-			currentVersion = D46797352B0D2E7700BAD8C4 /* YokaiDataModel.xcdatamodel */;
-			name = YokaiDataModel.xcdatamodeld;
-			path = "../../../Downloads/yokai-run-main 2/Yokai Run/YokaiDataModel.xcdatamodeld";
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D466F6D12AF92C98004AC986 /* Project object */;
 }

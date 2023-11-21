@@ -12,6 +12,8 @@ class GameViewModel: ObservableObject {
 
     @Published var gameInfo: Game
     
+    var userDefaultsManager = UserDefaultsManager.shared
+    
     private var cancellables: Set<AnyCancellable> = []
 
     init() {
