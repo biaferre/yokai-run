@@ -6,12 +6,20 @@
 //
 
 import Foundation
+import SpriteKit
 
 extension GameViewController: CycleDelegate {
     
-    func pauseStateChanged(newValue value: Bool) {
-        pauseView.isHidden.toggle()
-        gameScene?.view?.isPaused.toggle()
+    func pauseStateChanged() {
+        if !((gameScene?.viewModel.gameInfo.isDead)!) {
+            pauseView.isHidden.toggle()
+            gameScene?.view?.isPaused.toggle()
+        }
+    }
+    
+    func restartStateChanged() {
+        print("restart")
+        
     }
     
     func appHasReturned() {
@@ -20,18 +28,26 @@ extension GameViewController: CycleDelegate {
     }
     
     func checkIfDead() {
+        let transition = SKTransition.fade(with: .black, duration: 1)
+        let gameOverScene = GameOverScene(size: gameScene!.size)
+        gameOverScene.score = (gameScene?.viewModel.gameInfo.miles)!
+        gameOverScene.size = gameScene!.size
+        gameOverScene.scaleMode = .fill
+        
         if (gameScene?.viewModel.gameInfo.stamina)! <= 0 {
-            gameScene?.view?.isPaused.toggle()
-
             gameScene?.viewModel.gameInfo.isDead = true
-            gameOverView.isHidden = false
+            gameScene?.view?.presentScene(gameOverScene, transition: transition)
         }
     }
     
 }
 
 protocol CycleDelegate: AnyObject {
-    func pauseStateChanged(newValue value: Bool)
+    func pauseStateChanged()
+    
+    func restartStateChanged()
+    
+    func appHasReturned()
     
     func checkIfDead()
 

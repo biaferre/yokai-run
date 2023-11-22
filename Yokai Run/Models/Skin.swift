@@ -1,15 +1,7 @@
-//
-//  Skin.swift
-//  Yokai Run
-//
-//  Created by Bof on 09/11/23.
-//
-
+// Skin.swift
 import Foundation
-import UIKit
 
-class Skin: NSObject, NSCoding {
-    
+class Skin: NSObject, Codable {
     var name: String
     var jpName: String
     var skinDescription: String
@@ -28,33 +20,41 @@ class Skin: NSObject, NSCoding {
         self.isEnabled = isEnabled
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        name = aDecoder.decodeObject(forKey: "name") as? String ?? ""
-        jpName = aDecoder.decodeObject(forKey: "jpName") as? String ?? ""
-        skinDescription = aDecoder.decodeObject(forKey: "skinDescription") as? String ?? ""
-        powers = aDecoder.decodeObject(forKey: "powers") as? [String] ?? [""]
-        type = aDecoder.decodeObject(forKey: "type") as? String ?? ""
-        imgNamed = aDecoder.decodeObject(forKey: "imgNamed") as? String ?? ""
-        isEnabled = aDecoder.decodeBool(forKey: "isEnabled")
+    // MARK: - Codable
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        jpName = try container.decode(String.self, forKey: .jpName)
+        skinDescription = try container.decode(String.self, forKey: .skinDescription)
+        powers = try container.decode([String].self, forKey: .powers)
+        type = try container.decode(String.self, forKey: .type)
+        imgNamed = try container.decode(String.self, forKey: .imgNamed)
+        isEnabled = try container.decode(Bool.self, forKey: .isEnabled)
+    }
+
+    // MARK: - Codable
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(jpName, forKey: .jpName)
+        try container.encode(skinDescription, forKey: .skinDescription)
+        try container.encode(powers, forKey: .powers)
+        try container.encode(type, forKey: .type)
+        try container.encode(imgNamed, forKey: .imgNamed)
+        try container.encode(isEnabled, forKey: .isEnabled)
     }
     
-    func encode(with coder: NSCoder) {
-        coder.encode(name, forKey: "name")
-        coder.encode(jpName, forKey: "jpName")
-        coder.encode(skinDescription, forKey: "skinDescription")
-        coder.encode(powers, forKey: "powers")
-        coder.encode(type, forKey: "type")
-        coder.encode(imgNamed, forKey: "imgNamed")
-        coder.encode(isEnabled, forKey: "isEnabled")
-
-    }
+    // MARK: - CodingKeys
     
-    static func encodeSkins(_ skins: [Skin]) -> Data? {
-        return try? NSKeyedArchiver.archivedData(withRootObject: skins, requiringSecureCoding: false)
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case jpName
+        case skinDescription
+        case powers
+        case type
+        case imgNamed
+        case isEnabled
     }
-
-    static func decodeSkins(from data: Data) -> [Skin]? {
-        return try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Skin]
-    }
-
 }

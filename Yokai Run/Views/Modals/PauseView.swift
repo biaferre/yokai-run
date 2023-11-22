@@ -14,12 +14,8 @@ class PauseView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        buttonStack.addArrangedSubview(resumeButton)
-        buttonStack.addArrangedSubview(restartButton)
-
-        self.addSubview(buttonStack)
-        
-        setupButtons()
+        setupViewHierarchy()
+        setupLayout()
         
         self.backgroundColor = .purple
     }
@@ -40,16 +36,24 @@ class PauseView: UIView {
     
     @objc func restartAction() {
         print("restart")
-        //gameViewModel?.didPause()
     }
     
     @objc func menuAction() {
-        
+        gameViewModel?.restart()
     }
     
     // --MARK: buttons
 
-    func setupButtons() {
+    func setupViewHierarchy() {
+        buttonStack.addArrangedSubview(resumeButton)
+        buttonStack.addArrangedSubview(restartButton)
+        buttonStack.addArrangedSubview(menuButton)
+        
+        self.addSubview(buttonStack)
+
+    }
+    
+    func setupLayout() {
         
                 buttonStack.translatesAutoresizingMaskIntoConstraints = false
                 NSLayoutConstraint.activate([
@@ -78,7 +82,7 @@ class PauseView: UIView {
 
     }()
     
-    var homeButton: UIButton = {
+    var menuButton: UIButton = {
          var button = MainButtonComponent(type: .secondary, title: "Back To Menu").button
          button.addTarget(self, action: #selector(menuAction), for: .touchUpInside)
          return button

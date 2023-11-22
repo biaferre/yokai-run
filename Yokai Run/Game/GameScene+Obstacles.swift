@@ -37,7 +37,7 @@ extension GameScene {
             obstacleNodes[i].position.x -= 2*acceleration
             
             if obstacleNodes[i].position.x <= -((self.scene?.size.width)!) {
-                obstacleNodes[i].removeFromParent()
+                obstacleNodes[i].removeFromParent() // -MARK: implementar loop quando obstacleNodes.count = 0
             }
         }
     }

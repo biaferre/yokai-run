@@ -49,10 +49,8 @@ class GameViewController: UIViewController, UISceneDelegate {
         pauseView.addViewModel(gameViewModel: viewModel)
         
         pauseView.isHidden = !viewModel.gameInfo.isPaused
-        gameOverView.isHidden = true
 
         skView.addSubview(pauseView)
-        skView.addSubview(gameOverView)
 
         skView.presentScene(gameScene)
         
@@ -64,12 +62,6 @@ class GameViewController: UIViewController, UISceneDelegate {
         let pauseButton = MinimalButtonComponent(text: "Pause", img: "Lotus").button
         pauseButton.addTarget(self, action: #selector(pauseGame), for: .touchDown)
         return pauseButton
-    }()
-    
-    var gameOverView: UIView = {
-        var gameOverView = GameOverView()
-        gameOverView.layer.zPosition = 10
-        return gameOverView
     }()
     
     var pauseView: PauseView = {
@@ -92,14 +84,6 @@ class GameViewController: UIViewController, UISceneDelegate {
             pauseView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             pauseView.widthAnchor.constraint(equalToConstant: 200),
             pauseView.heightAnchor.constraint(equalToConstant: 400)
-        ])
-        
-        gameOverView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            gameOverView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            gameOverView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            gameOverView.widthAnchor.constraint(equalToConstant: 200),
-            gameOverView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
     

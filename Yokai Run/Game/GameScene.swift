@@ -53,8 +53,6 @@ class GameScene: SKScene {
         self.scaleMode = .aspectFit
         
         isUserInteractionEnabled = true
-
-//        fetchPlayerData()
         
         setupGrounds()
         setupHero()
@@ -85,29 +83,5 @@ class GameScene: SKScene {
     func passViewModel(viewModel: GameViewModel) {
         self.viewModel = viewModel
     }
-    
-
-//    func fetchPlayerData() {
-//        let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
-//        do {
-//            if let player = try context.fetch(fetchRequest).first {
-//                self.player = player
-//            } else {
-//                player = Player(context: context)
-//                let skin = Skin(context: context)
-//                skin.owned = player
-//                
-//                do {
-//                    try context.save()
-//                }
-//                catch {
-//                    print("Failed to save player: \(error)")
-//                }
-//
-//            }
-//        } catch {
-//            print("Failed to fetch player: \(error)")
-//        }
-//    }
     
 }

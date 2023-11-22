@@ -11,7 +11,7 @@ import SpriteKit
 extension GameScene {
     // MARK: hero setup
     func setupHero() {
-        let skin = userDefaultsManager.skins[0]
+        let skin = userDefaultsManager.selectedSkin
         let hero = SKSpriteNode(imageNamed: skin.imgNamed)
         hero.name = "Hero"
         hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)

@@ -30,13 +30,20 @@ class Game: ObservableObject {
     @Published var inCounter: Bool
     @Published var isPaused: Bool {
         didSet {
-            cycleDelegate?.pauseStateChanged(newValue: isPaused)
+            cycleDelegate?.pauseStateChanged()
         }
     }
-    
-    @Published var isDead: Bool
         
-    init(heroSkin: String, heroInitialY: CGFloat, heroCurrentY: CGFloat, stamina: CGFloat, isImmune: Bool, miles: Int, acceleration: CGFloat, inCounter: Bool, isPaused: Bool, isDead: Bool) {
+    @Published var isDead: Bool
+    
+    @Published var hasRestarted: Bool {
+        didSet {
+            cycleDelegate?.restartStateChanged()
+        }
+    }
+
+        
+    init(heroSkin: String, heroInitialY: CGFloat, heroCurrentY: CGFloat, stamina: CGFloat, isImmune: Bool, miles: Int, acceleration: CGFloat, inCounter: Bool, isPaused: Bool, isDead: Bool, hasRestarted: Bool) {
         self.heroSkin = heroSkin
         self.heroInitialY = heroInitialY
         self.heroCurrentY = heroCurrentY
@@ -47,6 +54,7 @@ class Game: ObservableObject {
         self.inCounter = inCounter
         self.isPaused = isPaused
         self.isDead = isDead
+        self.hasRestarted = hasRestarted
     }
 
 }

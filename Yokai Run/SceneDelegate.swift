@@ -10,6 +10,16 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    
+    // MARK: - function to clear data for debugging
+    
+    func clearUserDefaults() {
+        if let bundleIdentifier = Bundle.main.bundleIdentifier {
+            UserDefaultsManager.shared.userDefaults.removePersistentDomain(forName: bundleIdentifier)
+            print("UserDefaults cleared.")
+        }
+    }
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -18,8 +28,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowscene = (scene as? UIWindowScene) else { return }
         
+        clearUserDefaults()
+        
         window = UIWindow(windowScene: windowscene)
-        window?.rootViewController = UINavigationController(rootViewController: MenuViewController())
+        window?.rootViewController = NavigationManager.shared
         window?.makeKeyAndVisible()
     }
 

@@ -14,19 +14,22 @@ class GameViewModel: ObservableObject {
     
     var userDefaultsManager = UserDefaultsManager.shared
     
+    let initialGameInfo = Game(heroSkin: "Summoner",
+                               heroInitialY: -60,
+                               heroCurrentY: -60,
+                               stamina: 100.0,
+                               isImmune: false,
+                               miles: 0,
+                               acceleration: 1,
+                               inCounter: false,
+                               isPaused: false,
+                               isDead: false,
+                               hasRestarted: false)
+    
     private var cancellables: Set<AnyCancellable> = []
 
     init() {
-        self.gameInfo = Game(heroSkin: "Tengu", // later implement switching with selection
-                             heroInitialY: -60,
-                             heroCurrentY: -60,
-                             stamina: 100.0,
-                             isImmune: false,
-                             miles: 0,
-                             acceleration: 1,
-                             inCounter: false,
-                             isPaused: false,
-                             isDead: false)
+        self.gameInfo = initialGameInfo
         gameInfo.objectWillChange.sink {
             [weak self] in self?.objectWillChange.send()
         }.store(in: &cancellables)
@@ -34,6 +37,10 @@ class GameViewModel: ObservableObject {
     
     func didPause() {
         gameInfo.isPaused.toggle()
+    }
+    
+    func restart() {
+        gameInfo.hasRestarted.toggle()
     }
 
 }

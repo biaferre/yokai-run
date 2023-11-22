@@ -34,6 +34,8 @@
 		D467972B2B0D2B6F00BAD8C4 /* GameComponentPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467972A2B0D2B6F00BAD8C4 /* GameComponentPlacement.swift */; };
 		D467972D2B0D2C5F00BAD8C4 /* GameScene+Collectibles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467972C2B0D2C5F00BAD8C4 /* GameScene+Collectibles.swift */; };
 		D467973D2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D467973C2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift */; };
+		D4745F762B0EA13D00A2FB5C /* LockedSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745F752B0EA13D00A2FB5C /* LockedSkinView.swift */; };
+		D4745F782B0EA22D00A2FB5C /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745F772B0EA22D00A2FB5C /* NavigationManager.swift */; };
 		D4FEF82F2B0250AC007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
 		D4FEF8312B02515D007F95B2 /* MinimalButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */; };
 		D4FEF8332B02989D007F95B2 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */; };
@@ -44,7 +46,7 @@
 		D4FEF83B2B02A773007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
 		D4FEF83D2B03E5E4007F95B2 /* CycleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83C2B03E5E4007F95B2 /* CycleDelegate.swift */; };
 		D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */; };
-		D4FEF8452B065EAF007F95B2 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8442B065EAF007F95B2 /* GameOverView.swift */; };
+		D4FEF8452B065EAF007F95B2 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8442B065EAF007F95B2 /* GameOverScene.swift */; };
 		D4FEF8472B06837A007F95B2 /* GameScene+Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8462B06837A007F95B2 /* GameScene+Platforms.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		D467972A2B0D2B6F00BAD8C4 /* GameComponentPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameComponentPlacement.swift; sourceTree = "<group>"; };
 		D467972C2B0D2C5F00BAD8C4 /* GameScene+Collectibles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Collectibles.swift"; sourceTree = "<group>"; };
 		D467973C2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		D4745F752B0EA13D00A2FB5C /* LockedSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedSkinView.swift; sourceTree = "<group>"; };
+		D4745F772B0EA22D00A2FB5C /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neo-Tech.otf"; sourceTree = "<group>"; };
 		D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalButtonComponent.swift; sourceTree = "<group>"; };
 		D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
@@ -105,7 +109,7 @@
 		D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GUI.swift"; sourceTree = "<group>"; };
 		D4FEF83C2B03E5E4007F95B2 /* CycleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleDelegate.swift; sourceTree = "<group>"; };
 		D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Obstacles.swift"; sourceTree = "<group>"; };
-		D4FEF8442B065EAF007F95B2 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		D4FEF8442B065EAF007F95B2 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		D4FEF8462B06837A007F95B2 /* GameScene+Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Platforms.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D413544F2AFEC2A000FD0A01 /* PauseView.swift */,
-				D4FEF8442B065EAF007F95B2 /* GameOverView.swift */,
+				D4745F752B0EA13D00A2FB5C /* LockedSkinView.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D41BC7212AFD5F8100263E83 /* GameScene.swift */,
+				D4FEF8442B065EAF007F95B2 /* GameOverScene.swift */,
 				D467972A2B0D2B6F00BAD8C4 /* GameComponentPlacement.swift */,
 				D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */,
 				D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */,
@@ -213,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				D467973C2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift */,
+				D4745F772B0EA22D00A2FB5C /* NavigationManager.swift */,
 				D4FEF82B2B024D54007F95B2 /* Assets */,
 				D41BC7202AFD5F6400263E83 /* Game */,
 				D466F7132AFA9689004AC986 /* Views */,
@@ -444,6 +450,7 @@
 				D41BC7222AFD5F8100263E83 /* GameScene.swift in Sources */,
 				D4FEF8372B029993007F95B2 /* GameScene+Grounds.swift in Sources */,
 				D467973D2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift in Sources */,
+				D4745F762B0EA13D00A2FB5C /* LockedSkinView.swift in Sources */,
 				D466F7122AFA9685004AC986 /* MenuView.swift in Sources */,
 				D466F71B2AFAABC5004AC986 /* ButtonType.swift in Sources */,
 				D4FEF8392B029A91007F95B2 /* GameScene+GUI.swift in Sources */,
@@ -451,9 +458,10 @@
 				D41BC7262AFD6E0F00263E83 /* GameViewModel.swift in Sources */,
 				D41BC7312AFE865700263E83 /* ContactDelegate.swift in Sources */,
 				D41BC7132AFC1A2C00263E83 /* MenuViewModel.swift in Sources */,
+				D4745F782B0EA22D00A2FB5C /* NavigationManager.swift in Sources */,
 				D467972D2B0D2C5F00BAD8C4 /* GameScene+Collectibles.swift in Sources */,
 				D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */,
-				D4FEF8452B065EAF007F95B2 /* GameOverView.swift in Sources */,
+				D4FEF8452B065EAF007F95B2 /* GameOverScene.swift in Sources */,
 				D41BC7242AFD6B4500263E83 /* Game.swift in Sources */,
 				D41BC71B2AFC219800263E83 /* GameViewController.swift in Sources */,
 				D4FEF8352B029962007F95B2 /* GameScene+Hero.swift in Sources */,

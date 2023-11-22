@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class ArchiveView: UIView {
+    
+    let userDefaults = UserDefaultsManager.shared.userDefaults
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -16,6 +18,8 @@ class ArchiveView: UIView {
         
         setupViewHierarchy()
         setupLayout()
+        
+        print(UserDefaultsManager.shared.skins[1].isEnabled)
     }
     
     required init?(coder: NSCoder) {
@@ -41,13 +45,7 @@ class ArchiveView: UIView {
         for skin in UserDefaultsManager.shared.skins {
             let btn = UIButton()
             btn.setTitle(skin.name, for: .normal)
-            if skin.isEnabled {
-                btn.addTarget(self, action: #selector(selectSkin(_:)), for: .touchDown)
-            }
-            else {
-                print(skin.name)
-                btn.addTarget(self, action: #selector(skinNotAvailable), for: .touchDown)
-            }
+            btn.addTarget(self, action: #selector(selectSkin(_:)), for: .touchDown)
             buttons.append(btn)
         }
         
@@ -60,9 +58,23 @@ class ArchiveView: UIView {
         
         return stack
     }()
+
     
     @objc func selectSkin(_ sender: UIButton) {
-        print("selected \(String(describing: sender.titleLabel))")
+        if let index = buttonStack.arrangedSubviews.firstIndex(of: sender) {            
+            let selectedSkin = UserDefaultsManager.shared.skins[index]
+            
+            
+            if selectedSkin.isEnabled {
+                if let encodedNewSkin = try? JSONEncoder().encode(selectedSkin) {
+                    userDefaults.set(encodedNewSkin, forKey: UserDefaultsManager.shared.selectedSkinKey)
+                }
+            }
+            else {
+                print("skin indisponivel")
+
+            }
+        }
     }
     
     @objc func skinNotAvailable() {
