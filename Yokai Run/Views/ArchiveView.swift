@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class ArchiveView: UIView {
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .blue
@@ -39,8 +40,14 @@ class ArchiveView: UIView {
 
         for skin in UserDefaultsManager.shared.skins {
             let btn = UIButton()
-            btn.addTarget(self, action: #selector(selectSkin), for: .touchDown)
             btn.setTitle(skin.name, for: .normal)
+            if skin.isEnabled {
+                btn.addTarget(self, action: #selector(selectSkin(_:)), for: .touchDown)
+            }
+            else {
+                print(skin.name)
+                btn.addTarget(self, action: #selector(skinNotAvailable), for: .touchDown)
+            }
             buttons.append(btn)
         }
         
@@ -55,6 +62,11 @@ class ArchiveView: UIView {
     }()
     
     @objc func selectSkin(_ sender: UIButton) {
+        print("selected \(String(describing: sender.titleLabel))")
+    }
+    
+    @objc func skinNotAvailable() {
+        print("skin indisponivel")
     }
     
     

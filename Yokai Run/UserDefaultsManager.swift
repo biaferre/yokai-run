@@ -23,6 +23,8 @@ class UserDefaultsManager {
             self.skins = decodedSkins
             }
         else {
+            print("No stored data for 'SkinCollection'")
+
             self.skins = [
                 Skin(name: "Summoner", jpName: "召喚", skinDescription: "", powers: ["Summoning Yokai", "Sorcery"], type: "Human", imgNamed: "Basic", isEnabled: true),
                 Skin(name: "Tengu", jpName: "天狗", skinDescription: "Tengu (goblin-like)", powers: [], type: "", imgNamed: "Tengu", isEnabled: false),
@@ -32,6 +34,8 @@ class UserDefaultsManager {
 
             if let encodedSkins = Skin.encodeSkins(self.skins) {
                 userDefaults.set(encodedSkins, forKey: "SkinCollection")
+                print("Encoded and saved default skins")
+
             }
         }
         

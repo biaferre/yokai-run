@@ -35,7 +35,7 @@ class Skin: NSObject, NSCoding {
         powers = aDecoder.decodeObject(forKey: "powers") as? [String] ?? [""]
         type = aDecoder.decodeObject(forKey: "type") as? String ?? ""
         imgNamed = aDecoder.decodeObject(forKey: "imgNamed") as? String ?? ""
-        isEnabled = aDecoder.decodeObject(forKey: "isEnabled") as? Bool ?? false
+        isEnabled = aDecoder.decodeBool(forKey: "isEnabled")
     }
     
     func encode(with coder: NSCoder) {
