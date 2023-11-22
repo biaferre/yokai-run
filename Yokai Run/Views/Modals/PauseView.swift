@@ -35,11 +35,11 @@ class PauseView: UIView {
     }
     
     @objc func restartAction() {
-        print("restart")
+        gameViewModel?.restart()
     }
     
     @objc func menuAction() {
-        gameViewModel?.restart()
+        NavigationManager.shared.popViewController(animated: true)
     }
     
     // --MARK: buttons
