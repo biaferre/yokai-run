@@ -16,8 +16,6 @@ class PauseView: UIView {
         
         setupViewHierarchy()
         setupLayout()
-        
-        self.backgroundColor = .purple
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +25,14 @@ class PauseView: UIView {
     func addViewModel(gameViewModel: GameViewModel) {
         self.gameViewModel = gameViewModel
     }
+    
+    lazy var backgroundImage: UIImageView = {
+        let image = UIImage(named: "PauseView-Bg")
+        var imageView = UIImageView(image: image)
+        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+        
+        return imageView
+      }()
     
     @objc func resumeAction() {
         if ((gameViewModel?.gameInfo.isDead) == false) {
@@ -49,22 +55,28 @@ class PauseView: UIView {
         buttonStack.addArrangedSubview(restartButton)
         buttonStack.addArrangedSubview(menuButton)
         
+        self.addSubview(backgroundImage)
         self.addSubview(buttonStack)
-
     }
     
     func setupLayout() {
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            backgroundImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            backgroundImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        ])
         
-                buttonStack.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                    buttonStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                    buttonStack.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-                ])
+        buttonStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            buttonStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buttonStack.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
     }
     
     var buttonStack: UIStackView = {
         var stack = UIStackView()
         stack.axis = .vertical
+        stack.spacing = 12
         return stack
     }()
 

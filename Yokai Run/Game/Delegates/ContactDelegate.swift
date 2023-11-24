@@ -15,6 +15,10 @@ extension GameScene: SKPhysicsContactDelegate {
         //obstacle.removeFromParent()
     }
     
+    func absorbCollectible(collectible: SKSpriteNode) {
+        collectible.physicsBody = nil
+    }
+    
     struct ColliderType {
         static let HERO: UInt32 = 1
         static let ONGROUND: UInt32 = 2
@@ -33,11 +37,14 @@ extension GameScene: SKPhysicsContactDelegate {
         else if collision == ColliderType.HERO | ColliderType.OBSTACLE {
             print("colidi")
             absorbObstacle(obstacle: contact.bodyB.node as! SKSpriteNode)
-           // GameViewModel.shared.
         }
         else if collision == ColliderType.HERO | ColliderType.PLATFORM {
             isJumping = false
             isDoubleJumping = false
+        }
+        else if collision == ColliderType.HERO | ColliderType.YOKAI {
+            print("coletei skin")
+            hasCollectedSkin(node: contact.bodyB.node as! SKSpriteNode)
         }
     }
 

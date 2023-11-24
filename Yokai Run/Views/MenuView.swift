@@ -10,6 +10,10 @@ import UIKit
 
 class MenuView: UIView {
     weak var delegate: NavigationDelegate?
+    
+    var leftShojiInitialX = 0.0
+    var rightShojiInitialX = 0.0
+
 
     // --MARK: initializers
     
@@ -71,9 +75,6 @@ class MenuView: UIView {
         return label
     }()
     
-    //        button.titleLabel?.font = UIFont(name: "NeoTech", size: 12)
-
-    
     
     // --MARK: buttons
     lazy var startButton: UIButton = {
@@ -127,7 +128,6 @@ class MenuView: UIView {
         stack.distribution = .fillEqually
         
         
-        
         return stack
     }()
     
@@ -142,8 +142,26 @@ class MenuView: UIView {
         }
     }
     
+    func restoreBackground() {
+        leftShoji.removeFromSuperview()
+        rightShoji.removeFromSuperview()
+        
+        leftShoji.layer.position.x = leftShojiInitialX
+        rightShoji.layer.position.x = rightShojiInitialX
+
+        background.addArrangedSubview(leftShoji)
+        background.addArrangedSubview(rightShoji)
+
+        
+        
+    }
+    
     lazy var background: UIStackView = {
         var bgView = UIStackView(arrangedSubviews: [leftShoji,rightShoji] )
+
+        leftShojiInitialX = leftShoji.layer.position.x
+        rightShojiInitialX = rightShoji.layer.position.x
+
         bgView.alignment = .center
         bgView.axis = .horizontal
         bgView.distribution = .fillEqually

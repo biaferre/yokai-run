@@ -11,7 +11,7 @@ import UIKit
 class ArchiveView: UIView {
     
     let userDefaults = UserDefaultsManager.shared.userDefaults
-        
+            
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .blue
@@ -28,6 +28,7 @@ class ArchiveView: UIView {
     
     func setupViewHierarchy() {
         self.addSubview(buttonStack)
+        self.addSubview(uncollectedModel)
     }
     
     func setupLayout() {
@@ -35,6 +36,15 @@ class ArchiveView: UIView {
         NSLayoutConstraint.activate([
             buttonStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonStack.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+        
+        uncollectedModel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            uncollectedModel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            uncollectedModel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            uncollectedModel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3),
+            uncollectedModel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5)
+
         ])
         
     }
@@ -58,10 +68,27 @@ class ArchiveView: UIView {
         
         return stack
     }()
+    
+    lazy var uncollectedModel: UIImageView = {
+        let image = UIImage(named: "Uncollected-Modal")
+        var imageView = UIImageView(image: image)
+        imageView.isHidden = true
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleModelVisibility))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        return imageView
+    }()
 
+    @objc func toggleModelVisibility() {
+        UIView.animate(withDuration: 0.5) {
+            self.uncollectedModel.isHidden.toggle()
+        }
+    }
     
     @objc func selectSkin(_ sender: UIButton) {
-        if let index = buttonStack.arrangedSubviews.firstIndex(of: sender) {            
+        if let index = buttonStack.arrangedSubviews.firstIndex(of: sender) {
             let selectedSkin = UserDefaultsManager.shared.skins[index]
             
             
@@ -71,14 +98,16 @@ class ArchiveView: UIView {
                 }
             }
             else {
-                print("skin indisponivel")
-
+                toggleModelVisibility()
             }
         }
     }
     
-    @objc func skinNotAvailable() {
-        print("skin indisponivel")
+    func fadeInOut() {
+        UIView.animate(withDuration: 0.5) {
+                self.layer.opacity = 1.0
+                print("faaade iiinto you")
+        }
     }
     
     

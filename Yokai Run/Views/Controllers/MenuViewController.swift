@@ -20,10 +20,12 @@ class MenuViewController: UIViewController, NavigationDelegate {
     
     override func loadView() {
         view = menuView
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.delegate = self
     }
     
@@ -47,6 +49,10 @@ class MenuViewController: UIViewController, NavigationDelegate {
 
             navigationController?.pushViewController(ArchiveViewController(), animated: false)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.menuView.restoreBackground()
     }
     
 }

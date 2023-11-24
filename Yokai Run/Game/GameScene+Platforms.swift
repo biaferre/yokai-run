@@ -12,7 +12,7 @@ extension GameScene {
     
     func setupPlatforms() {
         
-        let platformPositions = GameComponentPlacement().platformNodes
+        let platformPositions = componentPlacement.platformNodes
 
         
         for i in 0...(platformNodes.count - 1) {

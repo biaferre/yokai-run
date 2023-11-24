@@ -15,6 +15,7 @@ class GameScene: SKScene {
     }
     
     let userDefaultsManager = UserDefaultsManager.shared
+    let componentPlacement = GameComponentPlacement()
     
     var groundNodes: [SKSpriteNode] = []
     
@@ -23,6 +24,8 @@ class GameScene: SKScene {
     
     var obstacleNodes = [SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle")]
     var platformNodes = [SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform")]
+    var collectibleNodes = [SKSpriteNode(imageNamed: "Collectible")]
+    
     
     var heroNode = SKSpriteNode()
     var viewModel: GameViewModel
@@ -55,16 +58,12 @@ class GameScene: SKScene {
         self.view?.layer.opacity = 0
         
         isUserInteractionEnabled = true
-        
-//        for family in UIFont.familyNames.sorted() {
-//            let names = UIFont.fontNames(forFamilyName: family)
-//            print("Family: \(family) Font names: \(names)")
-//        }
                 
         fadeInAnimation()
 
         setupGrounds()
         setupHero()
+        setupCollectibles()
         setupObstacles()
         setupPlatforms()
         setupGUI()
@@ -87,6 +86,7 @@ class GameScene: SKScene {
         moveGrounds(acceleration: viewModel.gameInfo.acceleration)
         moveObstacles(acceleration: viewModel.gameInfo.acceleration)
         movePlatforms(acceleration: viewModel.gameInfo.acceleration)
+        moveCollectibles(acceleration: viewModel.gameInfo.acceleration)
     }
     
     func passViewModel(viewModel: GameViewModel) {

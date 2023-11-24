@@ -46,6 +46,10 @@ class Skin: NSObject, Codable {
         try container.encode(isEnabled, forKey: .isEnabled)
     }
     
+    func enableSkin() -> Skin {
+        return Skin(name: self.name, jpName: self.jpName, skinDescription: self.skinDescription, powers: self.powers, type: self.type, imgNamed: self.imgNamed, isEnabled: true)
+    }
+    
     // MARK: - CodingKeys
     
     private enum CodingKeys: String, CodingKey {

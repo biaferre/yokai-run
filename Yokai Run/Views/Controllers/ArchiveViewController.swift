@@ -18,5 +18,10 @@ class ArchiveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+        
+    override func viewWillAppear(_ animated: Bool) {
+        view.layer.opacity = 0.0
+        archiveView.fadeInOut()
+    }
     
 }

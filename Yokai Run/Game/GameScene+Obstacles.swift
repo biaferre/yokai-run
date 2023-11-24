@@ -12,7 +12,7 @@ extension GameScene {
     
     func setupObstacles() {
         
-        let obstaclePositions = GameComponentPlacement().obstacleNodes
+        let obstaclePositions = componentPlacement.obstacleNodes
         
         for i in 0...(obstacleNodes.count - 1) {
             obstacleNodes[i].name = "Obstacle-\(i)"
