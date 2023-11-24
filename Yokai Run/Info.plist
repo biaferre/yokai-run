@@ -4,7 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Neo-Tech.otf</string>
+		<string>BatesShower.ttf</string>
+		<string>NeoTech.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

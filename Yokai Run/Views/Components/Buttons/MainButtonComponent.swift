@@ -14,32 +14,39 @@ class MainButtonComponent: UIButton {
     var button: UIButton
 
     override var intrinsicContentSize: CGSize {
-           get {
-               let baseSize = super.intrinsicContentSize
-               return CGSize(width: baseSize.width + 20,
-                             height: baseSize.height)
-               }
+        get {
+            let baseSize = super.intrinsicContentSize
+            return CGSize(width: baseSize.width + 20,
+                          height: baseSize.height)
         }
-    
-    init(type: ButtonScale, title: String) {
+    }
 
+    init(type: ButtonScale, title: String) {
         self.type = type
         self.title = title
         self.button = UIButton(type: .roundedRect)
-                
-        self.button.setTitle(title, for: .normal)
-        self.button.titleLabel?.font = UIFont(name: "Neo-Tech", size: 36)
-        
-        self.button.tintColor = type == .primary ? .black : .systemRed
-        self.button.backgroundColor = type == .primary ? .systemRed : .black
 
         super.init(frame: .zero)
 
-        }
-    
+        setupButton()
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
+
+    private func setupButton() {
+        var configuration = UIButton.Configuration.tinted()
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 24, bottom: 4, trailing: 24)
+        configuration.attributedTitle = AttributedString(title, attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: "NeoTech", size: 20)!]))
+        
+        button.configuration = configuration
+        
+        button.tintColor = type == .primary ? .black : .systemRed
+        button.backgroundColor = type == .primary ? .systemRed : .black
+
+        sizeToFit()
+
+        addSubview(button)
+    }
 }

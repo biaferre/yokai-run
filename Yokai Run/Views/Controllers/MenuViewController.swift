@@ -29,15 +29,19 @@ class MenuViewController: UIViewController, NavigationDelegate {
     
     func navigate(to: String) {
         if to == "Credits" {
-            navigationController?.pushViewController(CreditViewController(), animated: true)
+            navigationController?.isNavigationBarHidden = false
+
+            navigationController?.pushViewController(CreditViewController(), animated: false)
         }
         else if to == "Start" {
             navigationController?.isNavigationBarHidden = true
-            navigationController?.pushViewController(GameViewController(), animated: true)
-            
+            navigationController?.pushViewController(GameViewController(), animated: false)
+        
         }
         else {
-            navigationController?.pushViewController(ArchiveViewController(), animated: true)
+            navigationController?.isNavigationBarHidden = false
+
+            navigationController?.pushViewController(ArchiveViewController(), animated: false)
         }
     }
     

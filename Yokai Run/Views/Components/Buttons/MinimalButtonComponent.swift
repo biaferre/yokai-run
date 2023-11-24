@@ -23,7 +23,7 @@ class MinimalButtonComponent: UIButton {
         let button = UIButton()
         
         button.setTitle(text, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Neo-Tech", size: 12)
+        button.titleLabel?.font = UIFont(name: "NeoTech", size: 12)
         
         button.setImage(UIImage(named: img), for: .normal)
         button.tintColor = .white

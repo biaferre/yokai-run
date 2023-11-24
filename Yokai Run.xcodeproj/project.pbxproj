@@ -37,14 +37,15 @@
 		D4745F762B0EA13D00A2FB5C /* LockedSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745F752B0EA13D00A2FB5C /* LockedSkinView.swift */; };
 		D4745F782B0EA22D00A2FB5C /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745F772B0EA22D00A2FB5C /* NavigationManager.swift */; };
 		D4745F7A2B0EA58400A2FB5C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4745F792B0EA58400A2FB5C /* OnboardingView.swift */; };
-		D4FEF82F2B0250AC007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
+		D4B5D0BB2B1029E800F6B203 /* BatesShower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4B5D0BA2B1029E700F6B203 /* BatesShower.ttf */; };
+		D4FEF82F2B0250AC007F95B2 /* NeoTech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* NeoTech.otf */; };
 		D4FEF8312B02515D007F95B2 /* MinimalButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */; };
 		D4FEF8332B02989D007F95B2 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */; };
 		D4FEF8352B029962007F95B2 /* GameScene+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */; };
 		D4FEF8372B029993007F95B2 /* GameScene+Grounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8362B029993007F95B2 /* GameScene+Grounds.swift */; };
 		D4FEF8392B029A91007F95B2 /* GameScene+GUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8382B029A91007F95B2 /* GameScene+GUI.swift */; };
-		D4FEF83A2B02A772007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
-		D4FEF83B2B02A773007F95B2 /* Neo-Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */; };
+		D4FEF83A2B02A772007F95B2 /* NeoTech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* NeoTech.otf */; };
+		D4FEF83B2B02A773007F95B2 /* NeoTech.otf in Resources */ = {isa = PBXBuildFile; fileRef = D4FEF82E2B0250AC007F95B2 /* NeoTech.otf */; };
 		D4FEF83D2B03E5E4007F95B2 /* CycleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83C2B03E5E4007F95B2 /* CycleDelegate.swift */; };
 		D4FEF83F2B03E828007F95B2 /* GameScene+Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF83E2B03E828007F95B2 /* GameScene+Obstacles.swift */; };
 		D4FEF8452B065EAF007F95B2 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FEF8442B065EAF007F95B2 /* GameOverScene.swift */; };
@@ -87,7 +88,7 @@
 		D466F6DC2AF92C99004AC986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D466F6E82AF92C9A004AC986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D466F6ED2AF92C9A004AC986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D466F6ED2AF92C9A004AC986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Yokai Run/Info.plist"; sourceTree = SOURCE_ROOT; };
 		D466F6F22AF92C9A004AC986 /* Yokai RunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yokai RunTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D466F6F62AF92C9A004AC986 /* Yokai_RunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yokai_RunTests.swift; sourceTree = "<group>"; };
 		D466F6FC2AF92C9A004AC986 /* Yokai RunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yokai RunUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +104,8 @@
 		D4745F752B0EA13D00A2FB5C /* LockedSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedSkinView.swift; sourceTree = "<group>"; };
 		D4745F772B0EA22D00A2FB5C /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		D4745F792B0EA58400A2FB5C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neo-Tech.otf"; sourceTree = "<group>"; };
+		D4B5D0BA2B1029E700F6B203 /* BatesShower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BatesShower.ttf; sourceTree = "<group>"; };
+		D4FEF82E2B0250AC007F95B2 /* NeoTech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeoTech.otf; sourceTree = "<group>"; };
 		D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalButtonComponent.swift; sourceTree = "<group>"; };
 		D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
 		D4FEF8342B029962007F95B2 /* GameScene+Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Hero.swift"; sourceTree = "<group>"; };
@@ -295,7 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				D466F6E82AF92C9A004AC986 /* Assets.xcassets */,
-				D4FEF82E2B0250AC007F95B2 /* Neo-Tech.otf */,
+				D4B5D0BA2B1029E700F6B203 /* BatesShower.ttf */,
+				D4FEF82E2B0250AC007F95B2 /* NeoTech.otf */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -423,7 +426,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D466F6E92AF92C9A004AC986 /* Assets.xcassets in Resources */,
-				D4FEF82F2B0250AC007F95B2 /* Neo-Tech.otf in Resources */,
+				D4B5D0BB2B1029E800F6B203 /* BatesShower.ttf in Resources */,
+				D4FEF82F2B0250AC007F95B2 /* NeoTech.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FEF83A2B02A772007F95B2 /* Neo-Tech.otf in Resources */,
+				D4FEF83A2B02A772007F95B2 /* NeoTech.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FEF83B2B02A773007F95B2 /* Neo-Tech.otf in Resources */,
+				D4FEF83B2B02A773007F95B2 /* NeoTech.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

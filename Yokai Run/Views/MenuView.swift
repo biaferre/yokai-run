@@ -15,7 +15,7 @@ class MenuView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = .black
         
         setupViewHierarchy()
         setupViewAttributes()
@@ -30,6 +30,7 @@ class MenuView: UIView {
     
     // --MARK: setup functions
     func setupViewHierarchy(){
+        self.addSubview(background)
         self.addSubview(contentStack)
     }
     
@@ -38,10 +39,14 @@ class MenuView: UIView {
     }
     
     func setupLayout(){
-        titleBanner.translatesAutoresizingMaskIntoConstraints = false
+        background.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleBanner.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3, constant: 0),
-            titleBanner.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.55, constant: 0)
+            background.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            background.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            background.widthAnchor.constraint(equalTo: self.widthAnchor),
+            background.heightAnchor.constraint(equalTo: self.heightAnchor)
+
+
         ])
         
         contentStack.translatesAutoresizingMaskIntoConstraints = false
@@ -55,12 +60,19 @@ class MenuView: UIView {
     
     // --MARK: title
 
-    lazy var titleBanner: UIImageView = {
-        let img = UIImage(named: "TitleBanner")!
-        let imgView = UIImageView(image: img)
-        imgView.contentMode = .scaleToFill
-        return imgView
+    lazy var titleBanner: UILabel = {
+        var label: UILabel = UILabel()
+        label.text = "Yokai Run"
+        label.font = UIFont(name: "BatesShower", size: 64)
+        label.textColor = .systemRed
+        label.sizeToFit()
+        label.shadowColor = .black
+        
+        return label
     }()
+    
+    //        button.titleLabel?.font = UIFont(name: "NeoTech", size: 12)
+
     
     
     // --MARK: buttons
@@ -89,7 +101,8 @@ class MenuView: UIView {
     
     // --MARK: button action
     @objc func buttonAction(sender: UIButton!) {
-        delegate?.navigate(to: (sender.titleLabel?.text)!)
+        let title = (sender.titleLabel?.text)!
+        animateBackground(sender: title)
     }
     
     
@@ -109,11 +122,51 @@ class MenuView: UIView {
        let stack = UIStackView(arrangedSubviews: [titleBanner, buttonStack])
         
         stack.axis = .vertical
-        stack.spacing = 20.0
+        stack.spacing = 56.0
         stack.alignment = .center
-        stack.distribution = .equalCentering
+        stack.distribution = .fillEqually
+        
+        
         
         return stack
     }()
+    
+    // --MARK: background
+    
+    lazy var background: UIStackView = {
+        var bgView = UIStackView(arrangedSubviews: [leftShoji,rightShoji] )
+        bgView.alignment = .center
+        bgView.axis = .horizontal
+        bgView.distribution = .fillEqually
+        return bgView
+    }()
+    
+    lazy var rightShoji: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "Shoji-Right"))
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.opacity = 0.7
+        return imageView
+    }()
+    
+    lazy var leftShoji: UIView = {
+        let imageView = UIImageView(image: UIImage(named: "Shoji-Left"))
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.opacity = 0.7
+        return imageView
+    }()
+    
+    func animateBackground(sender: String) {
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            self.contentStack.layer.opacity = 0
+        },completion: {_ in
+            UIView.animate(withDuration: 1.5, animations: { () -> Void in
+                self.leftShoji.layer.position.x -= 1000
+                self.rightShoji.layer.position.x += 1000
+            },completion: {_ in
+                self.delegate?.navigate(to: (sender))
+
+            })
+        })
+    }
     
 }
