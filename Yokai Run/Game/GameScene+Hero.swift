@@ -11,7 +11,12 @@ import SpriteKit
 extension GameScene {
     // MARK: hero setup
     func setupHero() {
-        let skin = userDefaultsManager.selectedSkin
+        var skin: Skin = Skin(name: "fake", jpName: "fake", skinDescription: "fake", powers: [], type: "fake", imgNamed: "fake", isEnabled: true)
+        if let storedSelectedSkinData = UserDefaultsManager.shared.userDefaults.value(forKey: UserDefaultsManager.shared.selectedSkinKey),
+           let decodedSelectedSkin = try? JSONDecoder().decode(Skin.self, from: storedSelectedSkinData as! Data) {
+            skin = decodedSelectedSkin
+        }
+        print("com o heroi: \(skin.name)")
         let hero = SKSpriteNode(imageNamed: skin.imgNamed)
         hero.name = "Hero"
         hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)

@@ -43,7 +43,7 @@ class GameScene: SKScene {
     
     
     // MARK: basic functions
-
+    
     override func didMove(to: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
@@ -52,13 +52,17 @@ class GameScene: SKScene {
         
         self.scaleMode = .aspectFit
         
+        self.view?.layer.opacity = 0
+        
         isUserInteractionEnabled = true
         
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
-        
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print("Family: \(family) Font names: \(names)")
+//        }
+                
+        fadeInAnimation()
+
         setupGrounds()
         setupHero()
         setupObstacles()
@@ -87,6 +91,12 @@ class GameScene: SKScene {
     
     func passViewModel(viewModel: GameViewModel) {
         self.viewModel = viewModel
+    }
+    
+    func fadeInAnimation() {
+        UIView.animate(withDuration: 0.5) {
+            self.view?.layer.opacity = 1.0
+        }
     }
     
 }

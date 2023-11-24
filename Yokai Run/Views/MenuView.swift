@@ -133,6 +133,15 @@ class MenuView: UIView {
     
     // --MARK: background
     
+    func fadeInOut(in fadeIn: Bool) {
+        if fadeIn {
+            self.contentStack.layer.opacity = 1.0
+        }
+        else {
+            self.contentStack.layer.opacity = 0.0
+        }
+    }
+    
     lazy var background: UIStackView = {
         var bgView = UIStackView(arrangedSubviews: [leftShoji,rightShoji] )
         bgView.alignment = .center
@@ -156,8 +165,8 @@ class MenuView: UIView {
     }()
     
     func animateBackground(sender: String) {
-        UIView.animate(withDuration: 0.5, animations: { () -> Void in
-            self.contentStack.layer.opacity = 0
+        UIView.animate(withDuration: 0.5, animations: { [self] () -> Void in
+            fadeInOut(in: false)
         },completion: {_ in
             UIView.animate(withDuration: 1.5, animations: { () -> Void in
                 self.leftShoji.layer.position.x -= 1000

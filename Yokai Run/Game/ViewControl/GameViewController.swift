@@ -17,6 +17,9 @@ class GameViewController: UIViewController, UISceneDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(selectedSkinDidChange), name: Notification.Name("SelectedSkinDidChange"), object: nil)
+
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(pauseGame),
@@ -56,6 +59,10 @@ class GameViewController: UIViewController, UISceneDelegate {
         
         setupLayout()
 
+    }
+    
+    @objc func selectedSkinDidChange() {
+        print("nova skin é \(UserDefaultsManager.shared.selectedSkin)")
     }
 
     lazy var pauseButton: UIButton  = {

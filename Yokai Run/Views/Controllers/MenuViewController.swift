@@ -27,6 +27,10 @@ class MenuViewController: UIViewController, NavigationDelegate {
         viewModel.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.menuView.fadeInOut(in: true)
+    }
+    
     func navigate(to: String) {
         if to == "Credits" {
             navigationController?.isNavigationBarHidden = false
