@@ -27,7 +27,7 @@ class ArchiveView: UIView {
     }
     
     func setupViewHierarchy() {
-        self.addSubview(buttonStack)
+        self.addSubview(buttonsContainer)
         self.addSubview(uncollectedModel)
     }
     
@@ -49,9 +49,55 @@ class ArchiveView: UIView {
         
     }
     
-    lazy var shrineStack: UIStackView = {
+    lazy var buttonsContainer = {
+        let stack = UIStackView(arrangedSubviews: [buttonStack, shrineStack])
+        stack.axis = .vertical
+        stack.spacing = 0
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
         
+        return stack
     }()
+    
+    lazy var shrineStack: UIStackView = {
+        var shrines: [UIView] = []
+
+        for skin in UserDefaultsManager.shared.skins {
+            let view = UIView()
+            view.contentMode = .center
+                
+            let shrineImg = UIImage(named: "Shrine")
+                
+            var shrineImgView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.frame.width*0.11, height: self.frame.height*0.14))
+                
+            shrineImgView.image = shrineImg
+            shrineImgView.contentMode = .scaleAspectFill
+            
+            print(shrineImgView.frame.size)
+                
+            let title = UILabel()
+            title.text = skin.isEnabled ? skin.name : "?????"
+            title.font = UIFont(name: "hakidame", size: 14)
+            
+            view.isUserInteractionEnabled = true
+            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectSkin(_:))))
+                
+            view.addSubview(shrineImgView)
+            view.addSubview(title)
+            
+            shrines.append(view)
+        }
+        
+        
+        let stack = UIStackView(arrangedSubviews: shrines)
+        stack.axis = .horizontal
+        stack.spacing = 10.0
+        stack.alignment = .center
+        stack.distribution = .fillEqually
+        
+        return stack
+    }()
+
     
     lazy var buttonStack: UIStackView = {
         var buttons = [UIButton]()

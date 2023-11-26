@@ -111,6 +111,7 @@
 		D4B5D0BC2B12BF6F00F6B203 /* StaminaBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaminaBar.swift; sourceTree = "<group>"; };
 		D4B5D0BE2B12DB7D00F6B203 /* UIViewController+UIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIViewControllerRepresentable.swift"; sourceTree = "<group>"; };
 		D4B5D0C02B12DD9600F6B203 /* ArchiveView+Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArchiveView+Transitions.swift"; sourceTree = "<group>"; };
+		D4B5D0C22B12E2B100F6B203 /* hakidame.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = hakidame.TTF; sourceTree = "<group>"; };
 		D4FEF82E2B0250AC007F95B2 /* NeoTech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeoTech.otf; sourceTree = "<group>"; };
 		D4FEF8302B02515D007F95B2 /* MinimalButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalButtonComponent.swift; sourceTree = "<group>"; };
 		D4FEF8322B02989D007F95B2 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
@@ -229,6 +230,9 @@
 		D466F6DB2AF92C99004AC986 /* Yokai Run */ = {
 			isa = PBXGroup;
 			children = (
+				D466F6DC2AF92C99004AC986 /* AppDelegate.swift */,
+				D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */,
+				D466F6ED2AF92C9A004AC986 /* Info.plist */,
 				D467973C2B0D3DEF00BAD8C4 /* UserDefaultsManager.swift */,
 				D4745F772B0EA22D00A2FB5C /* NavigationManager.swift */,
 				D4FEF82B2B024D54007F95B2 /* Assets */,
@@ -237,9 +241,6 @@
 				D41BC7112AFC164700263E83 /* Models */,
 				D466F7162AFA9827004AC986 /* ViewModels */,
 				D41BC70D2AFC148800263E83 /* Extensions */,
-				D466F6DC2AF92C99004AC986 /* AppDelegate.swift */,
-				D466F6DE2AF92C99004AC986 /* SceneDelegate.swift */,
-				D466F6ED2AF92C9A004AC986 /* Info.plist */,
 			);
 			path = "Yokai Run";
 			sourceTree = "<group>";
@@ -307,6 +308,7 @@
 			children = (
 				D466F6E82AF92C9A004AC986 /* Assets.xcassets */,
 				D4B5D0BA2B1029E700F6B203 /* BatesShower.ttf */,
+				D4B5D0C22B12E2B100F6B203 /* hakidame.TTF */,
 				D4FEF82E2B0250AC007F95B2 /* NeoTech.otf */,
 			);
 			path = Assets;

@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>hakidame.ttf</string>
 		<string>BatesShower.ttf</string>
 		<string>NeoTech.otf</string>
 	</array>
