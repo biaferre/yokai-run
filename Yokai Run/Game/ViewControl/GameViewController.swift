@@ -38,23 +38,26 @@ class GameViewController: UIViewController, UISceneDelegate {
         
             
         // MARK: scene configurations
-        
-        let skView = SKView(frame: view.frame)
-        
+                
         let scene = GameScene.shared
         scene.passViewModel(viewModel: viewModel)
         
         gameScene = scene
                 
+        let skView = SKView(frame: view.frame)
+        
+        staminaBar.frame.size = CGSize(width: self.view.frame.size.width*0.2, height: self.view.frame.size.height*0.06)
+        staminaBar.center = CGPoint(x: self.view.frame.midX - 200, y: self.view.frame.midY + 100)
+        
+        view.addSubview(staminaBar)
+
         view.addSubview(skView)
         view.addSubview(pauseButton)
-        
+                
         pauseView.addViewModel(gameViewModel: viewModel)
-        
         pauseView.isHidden = !viewModel.gameInfo.isPaused
 
         skView.addSubview(pauseView)
-
         skView.presentScene(gameScene)
         
         setupLayout()
@@ -93,6 +96,13 @@ class GameViewController: UIViewController, UISceneDelegate {
             pauseView.heightAnchor.constraint(equalToConstant: 400)
         ])
     }
+    
+    var staminaBar: UIView = {
+        let bar = StaminaBar()
+        bar.layer.zPosition = 10
+
+        return bar
+    }()
     
     @objc func pauseGame() {
         viewModel.didPause()

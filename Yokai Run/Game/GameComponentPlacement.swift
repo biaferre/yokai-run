@@ -8,7 +8,7 @@
 import Foundation
 
 struct GameComponentPlacement {
-    var obstacleNodes: [CGPoint] = [CGPoint(x: 2000, y: 2000),CGPoint(x: 2000, y: 2000),CGPoint(x: 2000, y: 2000)]
+    var obstacleNodes: [CGPoint] = [CGPoint(x: 100, y: 100),CGPoint(x: 2000, y: 2000),CGPoint(x: 2000, y: 2000)]
     
     var platformNodes: [CGPoint] = [CGPoint(x: 2000, y: 2000),CGPoint(x: 2000, y: 2000),CGPoint(x: 2000, y: 2000),CGPoint(x: 2000, y: 2000),CGPoint(x: 2000, y: 2000)]
     

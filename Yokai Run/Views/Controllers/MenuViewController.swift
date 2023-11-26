@@ -36,7 +36,6 @@ class MenuViewController: UIViewController, NavigationDelegate {
     func navigate(to: String) {
         if to == "Credits" {
             navigationController?.isNavigationBarHidden = false
-
             navigationController?.pushViewController(CreditViewController(), animated: false)
         }
         else if to == "Start" {
@@ -46,7 +45,6 @@ class MenuViewController: UIViewController, NavigationDelegate {
         }
         else {
             navigationController?.isNavigationBarHidden = false
-
             navigationController?.pushViewController(ArchiveViewController(), animated: false)
         }
     }

@@ -187,8 +187,14 @@ class MenuView: UIView {
             fadeInOut(in: false)
         },completion: {_ in
             UIView.animate(withDuration: 1.5, animations: { () -> Void in
-                self.leftShoji.layer.position.x -= 1000
-                self.rightShoji.layer.position.x += 1000
+                if sender == "Start" {
+                    self.leftShoji.layer.position.x -= 1000
+                    self.rightShoji.layer.position.x += 1000
+                }
+                else {
+                    self.leftShoji.layer.position.x -= 300
+                    self.rightShoji.layer.position.x += 300
+                }
             },completion: {_ in
                 self.delegate?.navigate(to: (sender))
 

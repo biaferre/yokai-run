@@ -20,11 +20,11 @@ extension GameScene {
 
     
     func setupScore() {
-        
+
     }
     
     func setupStamina() {
-        
+
     }
     
     func setupCharm() {

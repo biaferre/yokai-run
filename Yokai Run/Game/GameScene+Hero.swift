@@ -21,7 +21,7 @@ extension GameScene {
         hero.name = "Hero"
         hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         hero.size = CGSize(width: (self.scene?.size.width)!*0.14, height: ((self.scene?.size.height)!*0.42))
-        hero.position = CGPoint(x: -((self.scene?.size.width)!)/3, y: -60)
+        hero.position = CGPoint(x: -((self.scene?.size.width)!)/2.75, y: -60)
         
         hero.physicsBody = SKPhysicsBody(rectangleOf: hero.size)
         hero.physicsBody?.isDynamic = true

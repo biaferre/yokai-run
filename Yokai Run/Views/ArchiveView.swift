@@ -49,12 +49,17 @@ class ArchiveView: UIView {
         
     }
     
+    lazy var shrineStack: UIStackView = {
+        
+    }()
+    
     lazy var buttonStack: UIStackView = {
         var buttons = [UIButton]()
 
         for skin in UserDefaultsManager.shared.skins {
             let btn = UIButton()
-            btn.setTitle(skin.name, for: .normal)
+            let btnImg = UIImage(named: skin.isEnabled ? "\(skin.imgNamed)-Logo" : "\(skin.imgNamed)-Logo-Hidden")
+            btn.setImage(btnImg, for: .normal)
             btn.addTarget(self, action: #selector(selectSkin(_:)), for: .touchDown)
             buttons.append(btn)
         }
@@ -80,35 +85,21 @@ class ArchiveView: UIView {
         
         return imageView
     }()
-
-    @objc func toggleModelVisibility() {
-        UIView.animate(withDuration: 0.5) {
-            self.uncollectedModel.isHidden.toggle()
-        }
-    }
-    
-    @objc func selectSkin(_ sender: UIButton) {
-        if let index = buttonStack.arrangedSubviews.firstIndex(of: sender) {
-            let selectedSkin = UserDefaultsManager.shared.skins[index]
-            
-            
-            if selectedSkin.isEnabled {
-                if let encodedNewSkin = try? JSONEncoder().encode(selectedSkin) {
-                    userDefaults.set(encodedNewSkin, forKey: UserDefaultsManager.shared.selectedSkinKey)
-                }
-            }
-            else {
-                toggleModelVisibility()
-            }
-        }
-    }
-    
-    func fadeInOut() {
-        UIView.animate(withDuration: 0.5) {
-                self.layer.opacity = 1.0
-                print("faaade iiinto you")
-        }
-    }
     
     
 }
+
+
+// MARK: - Preview
+#if DEBUG
+import SwiftUI
+
+@available(iOS 13, *)
+struct View_Preview: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ArchiveView().showPreview().previewDevice("iPhone 14 Pro").previewInterfaceOrientation(.landscapeRight)
+        }
+    }
+}
+#endif

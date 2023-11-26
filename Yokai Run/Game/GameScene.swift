@@ -10,26 +10,12 @@ import CoreData
 
 class GameScene: SKScene {
     
+    var heroNode = SKSpriteNode()
+    var viewModel: GameViewModel
+    
     static var shared: GameScene {
         return GameScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), viewModel: GameViewModel())
     }
-    
-    let userDefaultsManager = UserDefaultsManager.shared
-    let componentPlacement = GameComponentPlacement()
-    
-    var groundNodes: [SKSpriteNode] = []
-    
-    var isJumping: Bool = false
-    var isDoubleJumping: Bool = false
-    
-    var obstacleNodes = [SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle")]
-    var platformNodes = [SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform")]
-    var collectibleNodes = [SKSpriteNode(imageNamed: "Collectible")]
-    
-    
-    var heroNode = SKSpriteNode()
-    var viewModel: GameViewModel
-
     
     // MARK: inits
 
@@ -45,7 +31,31 @@ class GameScene: SKScene {
     }
     
     
+    // MARK: manager & placements
+
+    let userDefaultsManager = UserDefaultsManager.shared
+    let componentPlacement = GameComponentPlacement()
+    
+    
+    // MARK: controls
+    
+    var isJumping: Bool = false
+    var isDoubleJumping: Bool = false
+    
+    
+    // MARK: components initializers
+    
+    var obstacleNodes = [SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle"),SKSpriteNode(imageNamed: "Obstacle")]
+    var platformNodes = [SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform"), SKSpriteNode(imageNamed: "Platform")]
+    var collectibleNodes = [SKSpriteNode(imageNamed: "Collectible")]
+    var groundNodes: [SKSpriteNode] = []
+    
+    
     // MARK: basic functions
+    
+    func passViewModel(viewModel: GameViewModel) { // receives gameviewmodel from controller
+        self.viewModel = viewModel
+    }
     
     override func didMove(to: SKView) {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -58,6 +68,12 @@ class GameScene: SKScene {
         self.view?.layer.opacity = 0
         
         isUserInteractionEnabled = true
+        
+        let background = SKSpriteNode(imageNamed: "Game-Bg")
+        background.size = frame.size
+        background.position = CGPoint(x: frame.midX, y: frame.midY)
+        
+        self.addChild(background)
                 
         fadeInAnimation()
 
@@ -66,7 +82,6 @@ class GameScene: SKScene {
         setupCollectibles()
         setupObstacles()
         setupPlatforms()
-        setupGUI()
     }
 
 
@@ -87,10 +102,6 @@ class GameScene: SKScene {
         moveObstacles(acceleration: viewModel.gameInfo.acceleration)
         movePlatforms(acceleration: viewModel.gameInfo.acceleration)
         moveCollectibles(acceleration: viewModel.gameInfo.acceleration)
-    }
-    
-    func passViewModel(viewModel: GameViewModel) {
-        self.viewModel = viewModel
     }
     
     func fadeInAnimation() {
